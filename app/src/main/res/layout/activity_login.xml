@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    tools:context=".LoginActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/aksenback"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/logimg1"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_back"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:id="@+id/btnbacklog"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnbacklog"
+        android:layout_marginTop="20dp"
+        android:text="Welcome back !"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/poppinssemibold"
+        android:textSize="24sp"
+        android:textColor="@color/black"
+        android:id="@+id/logtext1"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/imglogin"
+        android:layout_below="@+id/logtext1"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/logimg2"
+        />
+
+    <LinearLayout
+        android:layout_width="410dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical"
+        android:padding="30dp"
+        android:layout_below="@id/logimg2"
+        android:id="@+id/regly1">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
+            android:inputType="text"
+            android:textSize="15sp"
+            android:background="@drawable/button_shape"
+            android:autofillHints="name"
+            android:hint="Enter your full name"
+            android:backgroundTint="@color/white"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:fontFamily="@font/poppinsregular"
+            android:textColor="@color/primaryColor"
+            android:id="@+id/logtextbox1"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
+            android:autofillHints="password"
+            android:textSize="15sp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button_shape"
+            android:inputType="textPassword"
+            android:hint="Password"
+            android:backgroundTint="@color/white"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:fontFamily="@font/poppinsregular"
+            android:textColor="@color/primaryColor"
+            android:id="@+id/logtextbox2"
+            />
+
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:layout_below="@id/regly1"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/button_shape"
+        android:width="250dp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/poppinsbold"
+        android:textSize="14sp"
+        android:id="@+id/logbtn1"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logbtn1"
+        android:orientation="horizontal"
+        android:id="@+id/logly2"
+        android:gravity="center"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppinsregular"
+            android:textColor="@color/primaryColor"
+            android:textSize="12sp"
+            android:text="No have an account?"
+            android:id="@+id/logtext2"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:fontFamily="@font/poppinssemibold"
+            android:textSize="12sp"
+            android:textColor="@color/primaryColor"
+            android:text="Register"
+            android:id="@+id/logtext3"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>
