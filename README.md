@@ -1,3 +1,3 @@
 # Prototype
 Project Android pertama
-Jangan di bully
+Lihat file Story board dan mock up untuk memahami tujuan/keseluruhan project
