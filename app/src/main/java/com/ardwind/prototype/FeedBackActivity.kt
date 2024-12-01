@@ -26,8 +26,8 @@ class FeedBackActivity : AppCompatActivity() {
             insets
         }
 
-        val HomeRules = findViewById<ImageView>(R.id.btnbackfeed)
-        HomeRules.setOnClickListener {
+        val homeRules = findViewById<ImageView>(R.id.btnbackfeed)
+        homeRules.setOnClickListener {
             navigateToHomeActivity()
         }
 

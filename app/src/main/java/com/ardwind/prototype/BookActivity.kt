@@ -26,8 +26,8 @@ class BookActivity : AppCompatActivity() {
             insets
         }
 
-        val HomeRules = findViewById<ImageView>(R.id.btnbackbook)
-        HomeRules.setOnClickListener {
+        val homeRules = findViewById<ImageView>(R.id.btnbackbook)
+        homeRules.setOnClickListener {
             navigateToHomeActivity()
         }
 

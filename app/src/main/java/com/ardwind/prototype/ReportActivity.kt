@@ -26,8 +26,8 @@ class ReportActivity : AppCompatActivity() {
             insets
         }
 
-        val HomeRules = findViewById<ImageView>(R.id.btnbackreport)
-        HomeRules.setOnClickListener {
+        val homeRules = findViewById<ImageView>(R.id.btnbackreport)
+        homeRules.setOnClickListener {
             navigateToHomeActivity()
         }
 

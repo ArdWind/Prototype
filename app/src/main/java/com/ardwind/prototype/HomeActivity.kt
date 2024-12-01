@@ -3,6 +3,7 @@ package com.ardwind.prototype
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -56,38 +57,38 @@ class HomeActivity : AppCompatActivity() {
             insets
         }
 
-        val btnRules1 = findViewById<ImageView>(R.id.homeic1)
+        val btnRules1 = findViewById<TextView>(R.id.menu1)
         btnRules1.setOnClickListener {
             navigateToRulesActivity()
         }
 
-        val btnRules2 = findViewById<ImageView>(R.id.homeic2)
+        val btnRules2 = findViewById<TextView>(R.id.menu2)
         btnRules2.setOnClickListener {
             navigateToViewActivity()
         }
 
-        val btnRules3 = findViewById<ImageView>(R.id.homeic3)
+        val btnRules3 = findViewById<TextView>(R.id.menu3)
         btnRules3.setOnClickListener {
             navigateToBookActivity()
         }
 
-        val btnRules4 = findViewById<ImageView>(R.id.homeic4)
+        val btnRules4 = findViewById<TextView>(R.id.menu4)
         btnRules4.setOnClickListener {
             navigateToReportActivity()
         }
 
-        val btnRules5 = findViewById<ImageView>(R.id.homeic5)
+        val btnRules5 = findViewById<TextView>(R.id.menu5)
         btnRules5.setOnClickListener {
             navigateToListActivity()
         }
 
-        val btnRules6 = findViewById<ImageView>(R.id.homeic6)
+        val btnRules6 = findViewById<TextView>(R.id.menu6)
         btnRules6.setOnClickListener {
             navigateToFeedActivity()
         }
 
-        val LoginRules = findViewById<ImageView>(R.id.btnbackhome)
-        LoginRules.setOnClickListener {
+        val loginRules = findViewById<ImageView>(R.id.btnbackhome)
+        loginRules.setOnClickListener {
             navigateToLoginActivity()
         }
     }

@@ -26,8 +26,8 @@ class ListActivity : AppCompatActivity() {
             insets
         }
 
-        val HomeRules = findViewById<ImageView>(R.id.btnbacklist)
-        HomeRules.setOnClickListener {
+        val homeRules = findViewById<ImageView>(R.id.btnbacklist)
+        homeRules.setOnClickListener {
             navigateToHomeActivity()
         }
 

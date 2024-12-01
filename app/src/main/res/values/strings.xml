@@ -91,4 +91,91 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="action_settings">Settings</string>
+
+    <!-- Titles -->
+    <string name="main_title">YukMeet</string>
+    <string name="subtitle">Aplikasi booking meeting &amp; Event online,
+Persiapan Meeting &amp; Event menjadi cepat, aman dan tenang&#8230; yuk kita booking&#8230;</string>
+
+    <!-- Main_Buttons -->
+    <string name="login_button">Login</string>
+    <string name="register_button">Register</string>
+    <!-- Feed_Back_Buttons -->
+    <string name="button_submit">Kirim</string>
+    <!-- Rules_Buttons -->
+    <string name="button_view_room">View Room</string>
+    <!-- View_Buttons -->
+    <string name="Button_list_booking">Button List Booking</string>
+
+    <!-- Main_Content Descriptions -->
+    <string name="background_image_desc">Background image of the main screen</string>
+    <string name="logo_image_desc">Animated logo of YukMeet</string>
+    <!-- Login_Content Descriptions -->
+    <string name="back_icon_desc">Icon to go back to the previous screen</string>
+    <string name="login_illustration_desc">Illustration representing login</string>
+    <!-- Register_Content Descriptions -->
+    <string name="register_illustration_desc">Illustration representing registration</string>
+    <!-- Feed_Back_Content Descriptions -->
+    <string name="cd_feedback_image">Gambar ilustrasi Feedback</string>
+
+    <!-- Login_Texts -->
+    <string name="welcome_back">Welcome back!</string>
+    <string name="full_name_hint">Enter your full name</string>
+    <string name="password_hint">Password</string>
+    <string name="no_account">No have an account?</string>
+    <string name="register">Register</string>
+    <!-- Register_Texts -->
+    <string name="welcome_onboard">Welcome Onboard</string>
+    <string name="register_description">Yuk daftar dulu untuk buat akun YukMeet</string>
+    <string name="email_hint">Enter your email</string>
+    <string name="create_password_hint">Create password</string>
+    <string name="confirm_password_hint">Confirm password</string>
+    <string name="already_have_account">Already have an account?</string>
+    <!-- Home_Texts -->
+    <string name="home_greeting">Hai, Booking ruangan apa hari ini?</string>
+    <string name="menu_rules">Peraturan Berlaku</string>
+    <string name="cd_rules_icon">Ikon untuk peraturan berlaku</string>
+    <string name="menu_preview">Preview Ruangan</string>
+    <string name="cd_preview_icon">Ikon untuk preview ruangan</string>
+    <string name="menu_my_booking">My Booking</string>
+    <string name="cd_my_booking_icon">Ikon untuk my booking</string>
+    <string name="menu_report1">Report</string>
+    <string name="cd_report_icon">Ikon untuk report</string>
+    <string name="menu_list_booking">List Booking</string>
+    <string name="cd_list_booking_icon">Ikon untuk list booking</string>
+    <string name="menu_kritik_dan_saran">Kritik dan Saran</string>
+    <string name="cd_kritik_dan_saran_icon">Ikon untuk kritik dan saran</string>
+    <!-- Feed_Back_Texts -->
+    <string name="feedback_title">Feed Back!</string>
+    <string name="feedback_subtitle">Kritik tanpa Saran = Menjatuhkan\nnamun\nKritik dengan Saran = Membangun</string>
+    <string name="input_hint_message">Tuliskan kritik dan saran Anda</string>
+    <!-- Rules_Texts -->
+    <string name="rules_title">Obey The Rules</string>
+    <string name="rules_subtitle">Mohon untuk dapat mengikuti dan mematuhi aturannya ya!</string>
+    <string name="rule_text_1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+    <string name="rule_text_2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+    <string name="rule_text_3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+    <string name="rule_text_4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+    <string name="rule_text_5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+    <string name="cd_rule_icon_1">Ikon untuk aturan pertama</string>
+    <string name="cd_rule_icon_2">Ikon untuk aturan kedua</string>
+    <string name="cd_rule_icon_3">Ikon untuk aturan ketiga</string>
+    <string name="cd_rule_icon_4">Ikon untuk aturan keempat</string>
+    <string name="cd_rule_icon_5">Ikon untuk aturan kelima</string>
+    <!-- View_Texts -->
+    <string name="view_room">View Room</string>
+    <string name="view_room_description">Pastikan anda memesan ruangan yg tepat untuk Meeting atau Event mu</string>
+    <string name="rule_1_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+    <string name="rule_2_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+    <string name="rule_3_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+    <string name="rule_4_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+    <string name="rule_5_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+    <string name="desc_room_tarivid">Room image with tarivid layout</string>
+    <string name="desc_room_tpm">Room image with tpm layout</string>
+    <string name="desc_room_zegafit">Room image with zegafit layout</string>
+    <string name="desc_room_setzaegafit">Room image with setzaegafit layout</string>
+    <string name="desc_room_setcafe">Room image with setcafe layout</string>
+
+
+
 </resources>

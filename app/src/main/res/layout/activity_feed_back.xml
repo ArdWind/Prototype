@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,126 +8,126 @@
     android:background="@color/backgroundColor"
     tools:context=".FeedBackActivity">
 
+  <!-- Background Aksen -->
   <ImageView
+      android:id="@+id/feedbackimg"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:src="@drawable/aksenback"
+      android:contentDescription="@string/background_image_desc"
       android:layout_alignParentTop="true"
-      android:layout_alignParentStart="true"
-      android:id="@+id/feedbackimg"
-      />
+      android:layout_alignParentStart="true" />
 
+  <!-- Tombol Kembali -->
   <ImageView
+      android:id="@+id/btnbackfeed"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:src="@drawable/ic_back"
+      android:contentDescription="@string/back_icon_desc"
       android:layout_marginStart="16dp"
-      android:layout_marginTop="16dp"
-      android:id="@+id/btnbackfeed"
-      />
+      android:layout_marginTop="16dp" />
 
+  <!-- Judul Halaman -->
   <TextView
+      android:id="@+id/feedtext1"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_below="@id/btnbackfeed"
       android:layout_marginTop="20dp"
-      android:text="Feed Back !"
+      android:text="@string/feedback_title"
       android:layout_centerHorizontal="true"
       android:fontFamily="@font/poppinssemibold"
       android:textSize="24sp"
-      android:textColor="@color/black"
-      android:id="@+id/feedtext1"
-      />
+      android:textColor="@color/black" />
 
+  <!-- Subjudul -->
   <TextView
+      android:id="@+id/feedtext2"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_below="@id/feedtext1"
-      android:text="Kritik tanpa Saran = menjatuhkan\nnamun\nKritik dengan Saran = Membangun"
+      android:text="@string/feedback_subtitle"
       android:layout_centerHorizontal="true"
       android:fontFamily="@font/poppinsregular"
       android:textAlignment="center"
       android:textSize="12sp"
       android:textColor="@color/black"
-      android:layout_marginTop="5dp"
-      android:id="@+id/feedtext2"
-      />
+      android:layout_marginTop="5dp" />
 
+  <!-- Gambar Feedback -->
   <ImageView
+      android:id="@+id/imgfeed"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_below="@id/feedtext2"
       android:src="@drawable/imgregis"
-      android:layout_centerHorizontal="true"
-      android:id="@+id/imgfeed"
-      />
+      android:contentDescription="@string/cd_feedback_image"
+      android:layout_centerHorizontal="true" />
 
+  <!-- Form Kritik dan Saran -->
   <LinearLayout
+      android:id="@+id/feedly1"
       android:layout_width="410dp"
       android:layout_height="wrap_content"
       android:layout_centerHorizontal="true"
-      android:paddingLeft="30dp"
-      android:paddingRight="30dp"
+      android:paddingStart="30dp"
+      android:paddingEnd="30dp"
       android:orientation="vertical"
-      android:layout_below="@id/imgfeed"
-      android:id="@+id/feedly1">
+      android:layout_below="@id/imgfeed">
 
-  <!-- Input Nama -->
-  <EditText
-      android:id="@+id/input_name"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:inputType="text"
-      android:autofillHints="name"
-      android:hint="Nama"
-      android:fontFamily="@font/poppinsregular"
-      android:textSize="15sp"
-      android:padding="12dp"
-      android:background="@drawable/button_shape"
-      android:backgroundTint="@color/white"
-      android:textColorHint="@color/secondaryColor"
-      android:textColor="@color/black"
-      android:layout_marginBottom="10dp"
-      />
+    <!-- Input Nama -->
+    <EditText
+        android:id="@+id/input_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:autofillHints="name"
+        android:hint="@string/full_name_hint"
+        android:fontFamily="@font/poppinsregular"
+        android:textSize="15sp"
+        android:padding="12dp"
+        android:background="@drawable/button_shape"
+        android:backgroundTint="@color/white"
+        android:textColorHint="@color/primaryColor"
+        android:textColor="@color/black"
+        android:layout_marginBottom="10dp" />
 
-  <!-- Input Email -->
-  <EditText
-      android:id="@+id/input_email"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:autofillHints="emailAddress"
-      android:hint="Email"
-      android:fontFamily="@font/poppinsregular"
-      android:textSize="15sp"
-      android:inputType="textEmailAddress"
-      android:padding="12dp"
-      android:background="@drawable/button_shape"
-      android:backgroundTint="@color/white"
-      android:textColorHint="@color/secondaryColor"
-      android:textColor="@color/black"
-      android:layout_marginBottom="10dp"
-      />
+    <!-- Input Email -->
+    <EditText
+        android:id="@+id/input_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="emailAddress"
+        android:hint="@string/email_hint"
+        android:fontFamily="@font/poppinsregular"
+        android:textSize="15sp"
+        android:inputType="textEmailAddress"
+        android:padding="12dp"
+        android:background="@drawable/button_shape"
+        android:backgroundTint="@color/white"
+        android:textColorHint="@color/primaryColor"
+        android:textColor="@color/black"
+        android:layout_marginBottom="10dp" />
 
-  <!-- Input Pesan Kritik dan Saran -->
-  <EditText
-      android:id="@+id/input_message"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:autofillHints="Feedback!"
-      android:hint="Tuliskan kritik dan saran Anda"
-      android:fontFamily="@font/poppinsregular"
-      android:textSize="15sp"
-      android:inputType="textMultiLine"
-      android:gravity="top"
-      android:minLines="5"
-      android:padding="12dp"
-      android:background="@drawable/button_shape"
-      android:backgroundTint="@color/white"
-      android:textColorHint="@color/secondaryColor"
-      android:textColor="@color/black"
-      android:layout_marginBottom="20dp"
-      />
-
+    <!-- Input Pesan -->
+    <EditText
+        android:id="@+id/input_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="Feedback!"
+        android:hint="@string/input_hint_message"
+        android:fontFamily="@font/poppinsregular"
+        android:textSize="15sp"
+        android:inputType="textMultiLine"
+        android:gravity="top"
+        android:minLines="5"
+        android:padding="12dp"
+        android:background="@drawable/button_shape"
+        android:backgroundTint="@color/white"
+        android:textColorHint="@color/primaryColor"
+        android:textColor="@color/black"
+        android:layout_marginBottom="20dp" />
   </LinearLayout>
 
   <!-- Tombol Kirim -->
@@ -136,15 +135,14 @@
       android:id="@+id/btn_submit"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
+      android:width="150dp"
       android:layout_below="@id/feedly1"
-      android:text="Kirim"
+      android:text="@string/button_submit"
       android:padding="12dp"
       android:layout_centerHorizontal="true"
       android:background="@drawable/button_shape"
-      android:width="250dp"
+      android:layout_marginTop="16dp"
       android:textColor="@color/white"
       android:fontFamily="@font/poppinsbold"
-      android:textSize="14sp"
-      />
-
-  </RelativeLayout>
+      android:textSize="14sp" />
+</RelativeLayout>

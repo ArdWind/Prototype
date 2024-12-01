@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,49 +7,51 @@
     android:background="@color/backgroundColor"
     tools:context=".HomeActivity">
 
+    <!-- Background Aksen -->
     <ImageView
+        android:id="@+id/homebackimg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/aksenback"
+        android:contentDescription="@string/background_image_desc"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/homebackimg"
-        />
+        android:layout_alignParentStart="true" />
 
+    <!-- Tombol Kembali -->
     <ImageView
+        android:id="@+id/btnbackhome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_back"
+        android:contentDescription="@string/back_icon_desc"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:id="@+id/btnbackhome"
-        />
+        android:layout_marginTop="16dp" />
 
+    <!-- Judul Utama -->
     <TextView
+        android:id="@+id/hometext1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/btnbackhome"
         android:layout_margin="20dp"
-        android:text="Hai, Booking ruangan apa hari ini?"
+        android:text="@string/home_greeting"
         android:layout_centerHorizontal="true"
         android:textAlignment="center"
         android:fontFamily="@font/poppinssemibold"
         android:textSize="24sp"
-        android:textColor="@color/black"
-        android:id="@+id/hometext1"
-        />
+        android:textColor="@color/black" />
 
-    <!-- Baris pertama dengan 2 menu -->
+    <!-- Baris Menu Pertama -->
     <LinearLayout
+        android:id="@+id/homemenu12"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:baselineAligned="false"
         android:layout_below="@id/hometext1"
         android:orientation="horizontal"
         android:gravity="bottom"
-        android:id="@+id/homemenu12">
+        android:baselineAligned="false">
 
-        <!-- Menu 1 -->
+        <!-- Menu 1: Peraturan Berlaku -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -59,24 +60,20 @@
             android:gravity="center"
             android:padding="8dp">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/homeicon1"
-                android:id="@+id/homeic1"
-                />
-
             <TextView
+                android:id="@+id/menu1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Peraturan Berlaku"
+                app:drawableTopCompat="@drawable/homeicon1"
+                android:contentDescription="@string/cd_rules_icon"
+                android:text="@string/menu_rules"
                 android:fontFamily="@font/poppinsregular"
                 android:textSize="12sp"
                 android:textColor="@color/black"
-                android:gravity="center"/>
+                android:gravity="center" />
         </LinearLayout>
 
-        <!-- Menu 2 -->
+        <!-- Menu 2: Preview Ruangan -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -85,37 +82,32 @@
             android:gravity="center"
             android:padding="8dp">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/homeicon2"
-                android:id="@+id/homeic2"
-                />
-
             <TextView
+                android:id="@+id/menu2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Preview Ruangan"
+                app:drawableTopCompat="@drawable/homeicon2"
+                android:contentDescription="@string/cd_preview_icon"
+                android:text="@string/menu_preview"
                 android:fontFamily="@font/poppinsregular"
                 android:textSize="12sp"
                 android:textColor="@color/black"
-                android:gravity="center"/>
+                android:gravity="center" />
         </LinearLayout>
-
     </LinearLayout>
 
-    <!-- Baris kedua dengan 2 menu -->
+    <!-- Baris Menu Kedua -->
     <LinearLayout
+        android:id="@+id/homemenu34"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:baselineAligned="false"
         android:layout_below="@id/homemenu12"
         android:orientation="horizontal"
         android:gravity="bottom"
         android:layout_marginTop="16dp"
-        android:id="@+id/homemenu34">
+        android:baselineAligned="false">
 
-        <!-- Menu 3 -->
+        <!-- Menu 3: My Booking -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -124,24 +116,20 @@
             android:gravity="center"
             android:padding="8dp">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/homeicon3"
-                android:id="@+id/homeic3"
-                />
-
             <TextView
+                android:id="@+id/menu3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="My Booking"
+                app:drawableTopCompat="@drawable/homeicon3"
+                android:contentDescription="@string/cd_my_booking_icon"
+                android:text="@string/menu_my_booking"
                 android:fontFamily="@font/poppinsregular"
                 android:textSize="12sp"
                 android:textColor="@color/black"
-                android:gravity="center"/>
+                android:gravity="center" />
         </LinearLayout>
 
-        <!-- Menu 4 -->
+        <!-- Menu 4: Report -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -150,37 +138,32 @@
             android:gravity="center"
             android:padding="8dp">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/homeicon4"
-                android:id="@+id/homeic4"
-                />
-
             <TextView
+                android:id="@+id/menu4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Report"
+                app:drawableTopCompat="@drawable/homeicon4"
+                android:contentDescription="@string/cd_report_icon"
+                android:text="@string/menu_report1"
                 android:fontFamily="@font/poppinsregular"
                 android:textSize="12sp"
                 android:textColor="@color/black"
-                android:gravity="center"/>
+                android:gravity="center" />
         </LinearLayout>
-
     </LinearLayout>
 
-    <!-- Baris ketiga dengan 2 menu -->
+    <!-- Baris Menu Ketiga -->
     <LinearLayout
+        android:id="@+id/homemenu56"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:baselineAligned="false"
         android:layout_below="@id/homemenu34"
         android:orientation="horizontal"
         android:gravity="bottom"
         android:layout_marginTop="16dp"
-        android:id="@+id/homemenu56">
+        android:baselineAligned="false">
 
-        <!-- Menu 5 -->
+        <!-- Menu 5: My Booking -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -189,47 +172,39 @@
             android:gravity="center"
             android:padding="8dp">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/homeicon5"
-                android:id="@+id/homeic5"
-                />
-
             <TextView
+                android:id="@+id/menu5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="List Booking"
-                android:fontFamily="@font/poppinsregular"
-                android:textSize="14sp"
-                android:textColor="@color/black"
-                android:gravity="center"/>
-        </LinearLayout>
-
-        <!-- Menu 6 -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:padding="8dp">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/homeicon6"
-                android:id="@+id/homeic6"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Kritik dan Saran"
+                app:drawableTopCompat="@drawable/homeicon5"
+                android:contentDescription="@string/cd_list_booking_icon"
+                android:text="@string/menu_list_booking"
                 android:fontFamily="@font/poppinsregular"
                 android:textSize="12sp"
                 android:textColor="@color/black"
-                android:gravity="center"/>
+                android:gravity="center" />
         </LinearLayout>
 
+        <!-- Menu 6: Report -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/menu6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:drawableTopCompat="@drawable/homeicon6"
+                android:contentDescription="@string/cd_kritik_dan_saran_icon"
+                android:text="@string/menu_kritik_dan_saran"
+                android:fontFamily="@font/poppinsregular"
+                android:textSize="12sp"
+                android:textColor="@color/black"
+                android:gravity="center" />
+        </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

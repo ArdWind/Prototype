@@ -32,8 +32,8 @@ class RulesActivity : AppCompatActivity() {
             insets
         }
 
-        val HomeRules = findViewById<ImageView>(R.id.btnbackrules)
-        HomeRules.setOnClickListener {
+        val homeRules = findViewById<ImageView>(R.id.btnbackrules)
+        homeRules.setOnClickListener {
             navigateToHomeActivity()
         }
 

@@ -17,6 +17,11 @@ class RegisterActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
+    private fun navigateToLoginActivity() {
+        val intent = Intent(this, LoginActivity::class.java)
+        startActivity(intent)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -31,6 +36,11 @@ class RegisterActivity : AppCompatActivity() {
         val btnBackReg = findViewById<ImageView>(R.id.btnbackreg)
         btnBackReg.setOnClickListener {
             navigateToMainActivity()
+        }
+
+        val btnLogin = findViewById<Button>(R.id.regbtn1)
+        btnLogin.setOnClickListener {
+            navigateToLoginActivity()
         }
 
         // Dapatkan referensi TextView dari XML

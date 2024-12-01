@@ -8,75 +8,79 @@
     android:background="@color/backgroundColor"
     tools:context=".MainActivity">
 
+    <!-- Background Image -->
     <ImageView
+        android:id="@+id/img_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/aksenback"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:id="@+id/img_1"
-        />
+        android:contentDescription="@string/background_image_desc"
+        android:src="@drawable/aksenback"
+        tools:ignore="ImageContrastCheck" />
 
+    <!-- Animated GIF Logo -->
     <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/img_2"
         android:layout_width="wrap_content"
         android:layout_height="217dp"
         android:src="@drawable/logo"
-        android:layout_below="@+id/img_1"
+        android:layout_below="@id/img_1"
         android:layout_centerHorizontal="true"
-        android:id="@+id/img_2"
-        />
+        android:contentDescription="@string/logo_image_desc" />
 
+    <!-- Main Title -->
     <TextView
+        android:id="@+id/txt1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/img_2"
-        android:text="YukMeet"
+        android:text="@string/main_title"
         android:layout_centerHorizontal="true"
         android:fontFamily="@font/poppinssemibold"
         android:textSize="40sp"
-        android:textColor="@color/black"
-        android:id="@+id/txt1"
-        />
+        android:textColor="@color/black" />
 
+    <!-- Subtitle -->
     <TextView
+        android:id="@+id/txt2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/txt1"
-        android:text="Aplikasi booking meeting &amp; Event online,\nPersiapan Meeting &amp; Event menjadi cepat, aman dan tenaang... yuk kita booking..."
+        android:text="@string/subtitle"
         android:padding="20dp"
         android:gravity="center"
         android:fontFamily="@font/poppinsregular"
-        android:textColor="@color/black"
-        android:id="@+id/txt2"
-        />
+        android:textColor="@color/black" />
 
+    <!-- Login Button -->
     <Button
+        android:id="@+id/btnlogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/txt2"
-        android:width="300dp"
-        android:text="Login"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:width="300dp"
+        android:text="@string/login_button"
         android:background="@drawable/button_shape"
         android:textColor="@color/white"
         android:textSize="14sp"
-        android:fontFamily="@font/poppinsbold"
-        android:id="@+id/btnlogin"
-        />
+        android:fontFamily="@font/poppinsbold" />
 
+    <!-- Register Button -->
     <Button
+        android:id="@+id/btnregister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
         android:layout_below="@id/btnlogin"
-        android:width="300dp"
-        android:text="Register"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:width="300dp"
+        android:text="@string/register_button"
         android:background="@drawable/button_shape"
         android:textColor="@color/white"
         android:textSize="14sp"
-        android:fontFamily="@font/poppinsbold"
-        android:id="@+id/btnregister"
-        />
+        android:fontFamily="@font/poppinsbold" />
 
 </RelativeLayout>
