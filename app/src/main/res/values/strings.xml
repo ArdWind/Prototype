@@ -105,7 +105,7 @@ Persiapan Meeting &amp; Event menjadi cepat, aman dan tenang&#8230; yuk kita boo
     <!-- Rules_Buttons -->
     <string name="button_view_room">View Room</string>
     <!-- View_Buttons -->
-    <string name="Button_list_booking">Button List Booking</string>
+    <string name="Button_list_booking">List Booking</string>
 
     <!-- Main_Content Descriptions -->
     <string name="background_image_desc">Background image of the main screen</string>

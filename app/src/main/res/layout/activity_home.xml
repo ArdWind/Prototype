@@ -7,6 +7,52 @@
     android:background="@color/backgroundColor"
     tools:context=".HomeActivity">
 
+    <!-- akun sesion Section -->
+    <LinearLayout
+        android:id="@+id/homly1"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end"
+        android:layout_margin="10dp">
+
+        <LinearLayout
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="end"
+            android:layout_margin="5dp">
+
+            <TextView
+                android:id="@+id/mail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppinsregular"
+                android:textSize="11sp"
+                android:text="email address" />
+
+            <TextView
+                android:id="@+id/fullname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppinssemibold"
+                android:textSize="11sp"
+                android:textColor="@color/primaryColor"
+                android:text="full name" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/icLogout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="10dp"
+            android:contentDescription="@string/back_icon_desc"
+            android:src="@drawable/ic_logout" />
+
+    </LinearLayout>
+
     <!-- Background Aksen -->
     <ImageView
         android:id="@+id/homebackimg"
@@ -33,7 +79,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/btnbackhome"
-        android:layout_margin="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="10dp"
         android:text="@string/home_greeting"
         android:layout_centerHorizontal="true"
         android:textAlignment="center"
