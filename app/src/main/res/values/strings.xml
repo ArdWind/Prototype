@@ -176,6 +176,11 @@ Persiapan Meeting &amp; Event menjadi cepat, aman dan tenang&#8230; yuk kita boo
     <string name="desc_room_setzaegafit">Room image with setzaegafit layout</string>
     <string name="desc_room_setcafe">Room image with setcafe layout</string>
 
-
+    <!-- Array untuk Spinner Ruangan -->
+    <string-array name="ruangan_options">
+        <item>Ruang 1</item>
+        <item>Ruang 2</item>
+        <item>Ruang 3</item>
+    </string-array>
 
 </resources>

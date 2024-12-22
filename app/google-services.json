@@ -2,7 +2,8 @@
   "project_info": {
     "project_number": "607265349717",
     "project_id": "yukmeet-fcf94",
-    "storage_bucket": "yukmeet-fcf94.firebasestorage.app"
+    "storage_bucket": "yukmeet-fcf94.firebasestorage.app",
+    "firebase_url": "https://yukmeet-fcf94-default-rtdb.asia-southeast1.firebasedatabase.app"
   },
   "client": [
     {

@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    tools:context=".FormActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Background Image -->
+        <ImageView
+            android:id="@+id/backgroundImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/background_image_desc"
+            android:scaleType="fitXY"
+            android:src="@drawable/aksenback"
+            tools:ignore="ImageContrastCheck" />
+
+        <!-- Title and Description -->
+        <LinearLayout
+            android:id="@+id/titleDescriptionLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="15dp"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="16dp">
+
+            <TextView
+                android:id="@+id/formtext1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppinssemibold"
+                android:text="Form Booking"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/formtext2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/poppinsregular"
+                android:text="Isi form dengan lengkap dan sesuai kebutuhan"
+                android:textAlignment="center"
+                android:textColor="@color/primaryColor"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lyform1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/titleDescriptionLayout"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Tanggal Booking -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppinsregular"
+                android:text="Tanggal Booking"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/editTglBooking"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/button_shape"
+                android:backgroundTint="@color/white"
+                android:clickable="true"
+                android:focusable="false"
+                android:fontFamily="@font/poppinsregular"
+                android:hint="Pilih Tanggal"
+                android:inputType="date"
+                android:minHeight="48dp"
+                android:paddingHorizontal="12dp"
+                android:textColorHint="@color/secondaryColor"
+                android:textColor="@color/primaryColor"
+                android:textSize="14sp" />
+
+            <!-- Jam Booking -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/poppinsregular"
+                android:text="Jam Booking"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/editJamMulai"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_shape"
+                    android:backgroundTint="@color/white"
+                    android:clickable="true"
+                    android:focusable="false"
+                    android:fontFamily="@font/poppinsregular"
+                    android:hint="Mulai"
+                    android:inputType="time"
+                    android:minHeight="48dp"
+                    android:paddingHorizontal="12dp"
+                    android:textColorHint="@color/secondaryColor"
+                    android:textColor="@color/primaryColor"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="@font/poppinsregular"
+                    android:text="-"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/editJamSelesai"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_shape"
+                    android:backgroundTint="@color/white"
+                    android:clickable="true"
+                    android:focusable="false"
+                    android:fontFamily="@font/poppinsregular"
+                    android:hint="Selesai"
+                    android:inputType="time"
+                    android:minHeight="48dp"
+                    android:paddingHorizontal="12dp"
+                    android:textColorHint="@color/secondaryColor"
+                    android:textColor="@color/primaryColor"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <!-- Ruangan -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/poppinsregular"
+                android:text="Ruangan"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <Spinner
+                android:id="@+id/spinnerRuangan"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/button_shape"
+                android:backgroundTint="@color/white"
+                android:textColorHint="@color/secondaryColor"
+                android:textColor="@color/primaryColor"
+                android:entries="@array/ruangan_options"
+                android:minHeight="48dp" />
+
+            <!-- PIC Booking -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/poppinsregular"
+                android:text="PIC Booking"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/editPicBooking"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/button_shape"
+                android:backgroundTint="@color/white"
+                android:fontFamily="@font/poppinsregular"
+                android:hint="Nama PIC"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:paddingHorizontal="12dp"
+                android:textColorHint="@color/secondaryColor"
+                android:textColor="@color/primaryColor"
+                android:textSize="14sp" />
+
+            <!-- Judul Event -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/poppinsregular"
+                android:text="Judul Event"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/editJudulEvent"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/button_shape"
+                android:backgroundTint="@color/white"
+                android:fontFamily="@font/poppinsregular"
+                android:hint="Judul Event"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:paddingHorizontal="12dp"
+                android:textColorHint="@color/secondaryColor"
+                android:textColor="@color/primaryColor"
+                android:textSize="14sp" />
+
+            <!-- Jumlah Peserta -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/poppinsregular"
+                android:text="Jumlah Peserta"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/editJumlahPeserta"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/button_shape"
+                android:backgroundTint="@color/white"
+                android:fontFamily="@font/poppinsregular"
+                android:hint="Jumlah Peserta"
+                android:inputType="number"
+                android:minHeight="48dp"
+                android:paddingHorizontal="12dp"
+                android:textColorHint="@color/secondaryColor"
+                android:textColor="@color/primaryColor"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:layout_below="@id/lyform1">
+
+            <Button
+                android:id="@+id/formbtn1"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lyform1"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="20dp"
+                android:background="@drawable/button_shape"
+                android:fontFamily="@font/poppinsbold"
+                android:minWidth="250dp"
+                android:minHeight="48dp"
+                android:text="@string/button_submit"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/formbtn2"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lyform1"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="20dp"
+                android:background="@drawable/button_shape"
+                android:fontFamily="@font/poppinsbold"
+                android:minWidth="250dp"
+                android:minHeight="48dp"
+                android:text="Cancel"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</ScrollView>
