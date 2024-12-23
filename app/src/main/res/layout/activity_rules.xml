@@ -1,4 +1,4 @@
-<RelativeLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,209 +8,215 @@
     android:background="@color/backgroundColor"
     tools:context=".RulesActivity">
 
-    <!-- Background Aksen -->
-    <ImageView
-        android:id="@+id/rulesbackimg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/aksenback"
-        android:contentDescription="@string/background_image_desc"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <!-- Tombol Kembali -->
-    <ImageView
-        android:id="@+id/btnbackrules"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_back"
-        android:contentDescription="@string/back_icon_desc"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp" />
-
-    <!-- Judul Halaman -->
-    <TextView
-        android:id="@+id/rulestext1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/btnbackrules"
-        android:layout_marginTop="20dp"
-        android:text="@string/rules_title"
-        android:layout_centerHorizontal="true"
-        android:fontFamily="@font/poppinssemibold"
-        android:textSize="24sp"
-        android:textColor="@color/black" />
-
-    <!-- Subjudul -->
-    <TextView
-        android:id="@+id/rulestext2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/rulestext1"
-        android:text="@string/rules_subtitle"
-        android:layout_centerHorizontal="true"
-        android:fontFamily="@font/poppinsregular"
-        android:textSize="12sp"
-        android:textColor="@color/black"
-        android:layout_marginBottom="20dp" />
-
-    <!-- Container Rules -->
-    <LinearLayout
-        android:id="@+id/rulesly1"
-        android:layout_width="380dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/rulestext2"
-        android:orientation="vertical"
-        android:layout_centerInParent="true"
-        android:padding="8dp"
-        android:layout_marginBottom="16dp">
-
-        <!-- Rule 1 -->
-        <LinearLayout
-            android:layout_width="match_parent"
+        <!-- Background Aksen -->
+        <ImageView
+            android:id="@+id/rulesbackimg"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:src="@drawable/aksenback"
+            android:contentDescription="@string/background_image_desc"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+
+        <!-- Tombol Kembali -->
+        <ImageView
+            android:id="@+id/btnbackrules"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back"
+            android:contentDescription="@string/back_icon_desc"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp" />
+
+        <!-- Judul Halaman -->
+        <TextView
+            android:id="@+id/rulestext1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnbackrules"
+            android:layout_marginTop="20dp"
+            android:text="@string/rules_title"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/poppinssemibold"
+            android:textSize="24sp"
+            android:textColor="@color/black" />
+
+        <!-- Subjudul -->
+        <TextView
+            android:id="@+id/rulestext2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rulestext1"
+            android:text="@string/rules_subtitle"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/poppinsregular"
+            android:textSize="12sp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Container Rules -->
+        <LinearLayout
+            android:id="@+id/rulesly1"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rulestext2"
+            android:orientation="vertical"
+            android:layout_centerInParent="true"
             android:padding="8dp"
-            tools:ignore="UseCompoundDrawables">
+            android:layout_marginBottom="16dp">
 
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/homeicon1"
-                android:contentDescription="@string/cd_rule_icon_1"
-                android:layout_gravity="center_vertical"
-                android:layout_marginEnd="12dp" />
-
-            <TextView
-                android:layout_width="0dp"
+            <!-- Rule 1 -->
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/rule_text_1"
-                android:textSize="14sp"
-                android:textAlignment="center"
-                android:textColor="@color/black" />
+                android:orientation="horizontal"
+                android:padding="8dp"
+                tools:ignore="UseCompoundDrawables">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/homeicon1"
+                    android:contentDescription="@string/cd_rule_icon_1"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="12dp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/rule_text_1"
+                    android:textSize="14sp"
+                    android:textAlignment="center"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <!-- Rule 2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                tools:ignore="UseCompoundDrawables">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/homeicon2"
+                    android:contentDescription="@string/cd_rule_icon_2"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="12dp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/rule_text_2"
+                    android:textSize="14sp"
+                    android:textAlignment="center"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <!-- Rule 3 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                tools:ignore="UseCompoundDrawables">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="12dp"
+                    android:contentDescription="@string/cd_rule_icon_3"
+                    android:src="@drawable/homeicon3"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/rule_text_3"
+                    android:textSize="14sp"
+                    android:textAlignment="center"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <!-- Rule 4 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                tools:ignore="UseCompoundDrawables">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/homeicon4"
+                    android:contentDescription="@string/cd_rule_icon_4"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="12dp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/rule_text_4"
+                    android:textSize="14sp"
+                    android:textAlignment="center"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <!-- Rule 5 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                tools:ignore="UseCompoundDrawables">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/homeicon5"
+                    android:contentDescription="@string/cd_rule_icon_5"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="12dp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/rule_text_5"
+                    android:textSize="14sp"
+                    android:textAlignment="center"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
         </LinearLayout>
 
-        <!-- Rule 2 -->
-        <LinearLayout
-            android:layout_width="match_parent"
+        <!-- Tombol View Room -->
+        <Button
+            android:id="@+id/btnrules1"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="8dp"
-            tools:ignore="UseCompoundDrawables">
+            android:layout_below="@id/rulesly1"
+            android:layout_centerHorizontal="true"
+            android:text="@string/button_view_room"
+            android:padding="12dp"
+            android:background="@drawable/button_shape"
+            android:layout_marginTop="20dp"
+            android:width="250dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppinsbold"
+            android:textSize="14sp" />
+    </RelativeLayout>
 
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/homeicon2"
-                android:contentDescription="@string/cd_rule_icon_2"
-                android:layout_gravity="center_vertical"
-                android:layout_marginEnd="12dp" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/rule_text_2"
-                android:textSize="14sp"
-                android:textAlignment="center"
-                android:textColor="@color/black" />
-        </LinearLayout>
-
-        <!-- Rule 3 -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="8dp"
-            tools:ignore="UseCompoundDrawables">
-
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_vertical"
-                android:layout_marginEnd="12dp"
-                android:contentDescription="@string/cd_rule_icon_3"
-                android:src="@drawable/homeicon3"
-                tools:ignore="ImageContrastCheck" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/rule_text_3"
-                android:textSize="14sp"
-                android:textAlignment="center"
-                android:textColor="@color/black" />
-        </LinearLayout>
-
-        <!-- Rule 4 -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="8dp"
-            tools:ignore="UseCompoundDrawables">
-
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/homeicon4"
-                android:contentDescription="@string/cd_rule_icon_4"
-                android:layout_gravity="center_vertical"
-                android:layout_marginEnd="12dp" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/rule_text_4"
-                android:textSize="14sp"
-                android:textAlignment="center"
-                android:textColor="@color/black" />
-        </LinearLayout>
-
-        <!-- Rule 5 -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="8dp"
-            tools:ignore="UseCompoundDrawables">
-
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/homeicon5"
-                android:contentDescription="@string/cd_rule_icon_5"
-                android:layout_gravity="center_vertical"
-                android:layout_marginEnd="12dp" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/rule_text_5"
-                android:textSize="14sp"
-                android:textAlignment="center"
-                android:textColor="@color/black" />
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <!-- Tombol View Room -->
-    <Button
-        android:id="@+id/btnrules1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/rulesly1"
-        android:layout_centerHorizontal="true"
-        android:text="@string/button_view_room"
-        android:padding="12dp"
-        android:background="@drawable/button_shape"
-        android:layout_marginTop="20dp"
-        android:width="250dp"
-        android:textColor="@color/white"
-        android:fontFamily="@font/poppinsbold"
-        android:textSize="14sp" />
-</RelativeLayout>
+</ScrollView>

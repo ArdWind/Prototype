@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_back"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:id="@+id/btnbackreport"
         />
@@ -30,7 +30,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/btnbackreport"
-        android:layout_margin="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="10dp"
         android:text="Report"
         android:layout_centerHorizontal="true"
         android:fontFamily="@font/poppinssemibold"
@@ -38,5 +39,178 @@
         android:textColor="@color/black"
         android:id="@+id/reporttext1"
         />
+
+    <LinearLayout
+        android:id="@+id/lyreport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/reporttext1"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true">
+
+        <LinearLayout
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_shape"
+            android:backgroundTint="@color/white"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/searchEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:clickable="true"
+                android:focusable="false"
+                android:fontFamily="@font/poppinsregular"
+                android:hint="Search by Date"
+                android:inputType="date"
+                android:textAlignment="center"
+                android:textColor="@color/primaryColor"
+                android:textColorHint="@color/secondaryColor"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/calendarImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/ic_calendar" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnExportPdf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="16dp"
+            android:text="@string/export_pdf_button"
+            android:background="@drawable/button_shape"
+            android:width="120dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppinsbold"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lyreport2"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@id/lyreport"
+        android:layout_marginTop="15dp">
+
+        <TextView
+            android:id="@+id/tanggalBookingTextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Tgl Booking"
+            android:textSize="11sp"
+            android:textAlignment="center"
+            android:textColor="@color/backgroundColor"
+            android:background="@color/primaryColor" />
+
+        <TextView
+            android:id="@+id/pembuatTextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Pembuat"
+            android:textSize="11sp"
+            android:textAlignment="center"
+            android:textColor="@color/backgroundColor"
+            android:background="@color/primaryColor"
+            android:gravity="center_vertical"
+            tools:ignore="RtlCompat" />
+
+        <TextView
+            android:id="@+id/jamMulaiTextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Mulai"
+            android:textSize="11sp"
+            android:textAlignment="center"
+            android:textColor="@color/backgroundColor"
+            android:background="@color/primaryColor"
+            android:gravity="center_vertical"
+            tools:ignore="RtlCompat"/>
+
+        <TextView
+            android:id="@+id/jamSelesaiTextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Selesai"
+            android:textSize="11sp"
+            android:textAlignment="center"
+            android:textColor="@color/backgroundColor"
+            android:background="@color/primaryColor"
+            android:gravity="center_vertical"
+            tools:ignore="RtlCompat" />
+
+        <TextView
+            android:id="@+id/ruanganTextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Ruangan"
+            android:textSize="11sp"
+            android:textAlignment="center"
+            android:textColor="@color/backgroundColor"
+            android:background="@color/primaryColor"
+            android:gravity="center_vertical"
+            tools:ignore="RtlCompat" />
+
+        <TextView
+            android:id="@+id/picBookingTextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="PIC"
+            android:textSize="11sp"
+            android:textAlignment="center"
+            android:textColor="@color/backgroundColor"
+            android:background="@color/primaryColor"
+            android:gravity="center_vertical"
+            tools:ignore="RtlCompat" />
+
+        <TextView
+            android:id="@+id/judulEventTextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Event"
+            android:textSize="11sp"
+            android:textAlignment="center"
+            android:textColor="@color/backgroundColor"
+            android:background="@color/primaryColor"
+            android:gravity="center_vertical"
+            tools:ignore="RtlCompat"/>
+
+        <TextView
+            android:id="@+id/jumlahPesertaTextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Peserta"
+            android:textSize="11sp"
+            android:textAlignment="center"
+            android:textColor="@color/backgroundColor"
+            android:background="@color/primaryColor"
+            android:gravity="center_vertical"
+            tools:ignore="RtlCompat"/>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewReport"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lyreport2"/>
 
 </RelativeLayout>

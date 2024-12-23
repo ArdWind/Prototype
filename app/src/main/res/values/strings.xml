@@ -183,4 +183,10 @@ Persiapan Meeting &amp; Event menjadi cepat, aman dan tenang&#8230; yuk kita boo
         <item>Ruang 3</item>
     </string-array>
 
+<!-- String halaman report-->
+    <string name="report_title">Report</string>
+    <string name="search_date_hint">Cari Tanggal (dd MMM yyyy)</string>
+    <string name="calendar_icon_desc">Calendar Icon</string>
+    <string name="export_pdf_button">Export PDF</string>
+
 </resources>

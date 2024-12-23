@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp">
+
+    <TextView
+        android:id="@+id/tanggalBookingTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Tgl Booking"
+        android:textSize="11sp"
+        android:textAlignment="center"
+        android:backgroundTint="@color/white"/>
+
+    <TextView
+        android:id="@+id/pembuatTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Pembuat"
+        android:textSize="11sp"
+        android:textAlignment="center"
+        android:backgroundTint="@color/white"  />
+
+
+
+    <TextView
+        android:id="@+id/jamMulaiTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Mulai"
+        android:textSize="11sp"
+        android:textAlignment="center"
+        android:backgroundTint="@color/white"  />
+
+    <TextView
+        android:id="@+id/jamSelesaiTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Selesai"
+        android:textSize="11sp"
+        android:textAlignment="center"
+        android:backgroundTint="@color/white"  />
+
+    <TextView
+        android:id="@+id/ruanganTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Ruangan"
+        android:textSize="11sp"
+        android:textAlignment="center"
+        android:backgroundTint="@color/white"  />
+
+    <TextView
+        android:id="@+id/picBookingTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="PIC"
+        android:textSize="11sp"
+        android:textAlignment="center"
+        android:backgroundTint="@color/white"  />
+
+    <TextView
+        android:id="@+id/judulEventTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Event"
+        android:textSize="11sp"
+        android:textAlignment="center"
+        android:backgroundTint="@color/white"  />
+
+    <TextView
+        android:id="@+id/jumlahPesertaTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Peserta"
+        android:textSize="11sp"
+        android:textAlignment="center"
+        android:backgroundTint="@color/white" />
+
+</LinearLayout>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -8,179 +9,186 @@
     android:background="@color/backgroundColor"
     tools:context=".RegisterActivity">
 
-    <!-- Background Image -->
-    <ImageView
-        android:id="@+id/regbackimg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/aksenback"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:contentDescription="@string/background_image_desc" />
-
-    <!-- Back Button -->
-    <ImageView
-        android:id="@+id/btnbackreg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_back"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:contentDescription="@string/back_icon_desc" />
-
-    <!-- Welcome Text -->
-    <TextView
-        android:id="@+id/regtext1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/btnbackreg"
-        android:layout_marginTop="20dp"
-        android:text="@string/welcome_onboard"
-        android:layout_centerHorizontal="true"
-        android:fontFamily="@font/poppinssemibold"
-        android:textSize="24sp"
-        android:textColor="@color/black" />
-
-    <!-- Description Text -->
-    <TextView
-        android:id="@+id/regtext2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/regtext1"
-        android:text="@string/register_description"
-        android:layout_centerHorizontal="true"
-        android:fontFamily="@font/poppinsregular"
-        android:textSize="12sp"
-        android:textColor="@color/black"
-        android:layout_marginTop="10dp" />
-
-    <!-- Registration Illustration -->
-    <ImageView
-        android:id="@+id/imgregis"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/regtext2"
-        android:src="@drawable/imgregis"
-        android:layout_centerHorizontal="true"
-        android:contentDescription="@string/register_illustration_desc" />
-
-    <!-- Input Fields -->
-    <LinearLayout
-        android:id="@+id/regly1"
-        android:layout_width="410dp"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:paddingLeft="30dp"
-        android:paddingRight="30dp"
-        android:orientation="vertical"
-        android:layout_below="@id/imgregis">
-
-        <EditText
-            android:id="@+id/regtextbox1"
-            android:layout_width="match_parent"
-            android:layout_height="57dp"
-            android:inputType="text"
-            android:textSize="15sp"
-            android:background="@drawable/button_shape"
-            android:hint="@string/full_name_hint"
-            android:autofillHints="name"
-            android:backgroundTint="@color/white"
-            android:paddingStart="15dp"
-            android:paddingEnd="15dp"
-            android:fontFamily="@font/poppinsregular"
-            android:textColor="@color/primaryColor" />
-
-        <EditText
-            android:id="@+id/regtextbox2"
-            android:layout_width="match_parent"
-            android:layout_height="57dp"
-            android:inputType="textEmailAddress"
-            android:autofillHints="emailAddress"
-            android:textSize="15sp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/button_shape"
-            android:hint="@string/email_hint"
-            android:backgroundTint="@color/white"
-            android:paddingStart="15dp"
-            android:paddingEnd="15dp"
-            android:fontFamily="@font/poppinsregular"
-            android:textColor="@color/primaryColor" />
-
-        <EditText
-            android:id="@+id/regtextbox3"
-            android:layout_width="match_parent"
-            android:layout_height="57dp"
-            android:inputType="textPassword"
-            android:autofillHints="password"
-            android:textSize="15sp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/button_shape"
-            android:hint="@string/create_password_hint"
-            android:backgroundTint="@color/white"
-            android:paddingStart="15dp"
-            android:paddingEnd="15dp"
-            android:fontFamily="@font/poppinsregular"
-            android:textColor="@color/primaryColor" />
-
-        <EditText
-            android:id="@+id/regtextbox4"
-            android:layout_width="match_parent"
-            android:layout_height="57dp"
-            android:inputType="textPassword"
-            android:autofillHints="password"
-            android:textSize="15sp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/button_shape"
-            android:hint="@string/confirm_password_hint"
-            android:backgroundTint="@color/white"
-            android:paddingStart="15dp"
-            android:paddingEnd="15dp"
-            android:fontFamily="@font/poppinsregular"
-            android:textColor="@color/black" />
-    </LinearLayout>
-
-    <!-- Register Button -->
-    <Button
-        android:id="@+id/regbtn1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/register_button"
-        android:layout_below="@id/regly1"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/button_shape"
-        android:width="250dp"
-        android:textColor="@color/white"
-        android:fontFamily="@font/poppinsbold"
-        android:textSize="14sp" />
-
-    <!-- Already Have Account Section -->
-    <LinearLayout
-        android:id="@+id/regly2"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/regbtn1"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_marginTop="20dp">
+        android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/regtext3"
+        <!-- Background Image -->
+        <ImageView
+            android:id="@+id/regbackimg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:src="@drawable/aksenback"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:contentDescription="@string/background_image_desc" />
+
+        <!-- Back Button -->
+        <ImageView
+            android:id="@+id/btnbackreg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@string/back_icon_desc" />
+
+        <!-- Welcome Text -->
+        <TextView
+            android:id="@+id/regtext1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnbackreg"
+            android:layout_marginTop="20dp"
+            android:text="@string/welcome_onboard"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/poppinssemibold"
+            android:textSize="24sp"
+            android:textColor="@color/black" />
+
+        <!-- Description Text -->
+        <TextView
+            android:id="@+id/regtext2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/regtext1"
+            android:text="@string/register_description"
+            android:layout_centerHorizontal="true"
             android:fontFamily="@font/poppinsregular"
             android:textSize="12sp"
-            android:text="@string/already_have_account" />
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp" />
 
-        <TextView
-            android:id="@+id/regtext4"
+        <!-- Registration Illustration -->
+        <ImageView
+            android:id="@+id/imgregis"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:fontFamily="@font/poppinssemibold"
-            android:textSize="12sp"
-            android:textColor="@color/primaryColor"
-            android:text="@string/login_button" />
-    </LinearLayout>
-</RelativeLayout>
+            android:layout_below="@id/regtext2"
+            android:src="@drawable/imgregis"
+            android:layout_centerHorizontal="true"
+            android:contentDescription="@string/register_illustration_desc" />
+
+        <!-- Input Fields -->
+        <LinearLayout
+            android:id="@+id/regly1"
+            android:layout_width="410dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:orientation="vertical"
+            android:layout_below="@id/imgregis">
+
+            <EditText
+                android:id="@+id/regtextbox1"
+                android:layout_width="match_parent"
+                android:layout_height="57dp"
+                android:inputType="text"
+                android:textSize="15sp"
+                android:background="@drawable/button_shape"
+                android:hint="@string/full_name_hint"
+                android:autofillHints="name"
+                android:backgroundTint="@color/white"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:fontFamily="@font/poppinsregular"
+                android:textColor="@color/primaryColor" />
+
+            <EditText
+                android:id="@+id/regtextbox2"
+                android:layout_width="match_parent"
+                android:layout_height="57dp"
+                android:inputType="textEmailAddress"
+                android:autofillHints="emailAddress"
+                android:textSize="15sp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/button_shape"
+                android:hint="@string/email_hint"
+                android:backgroundTint="@color/white"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:fontFamily="@font/poppinsregular"
+                android:textColor="@color/primaryColor" />
+
+            <EditText
+                android:id="@+id/regtextbox3"
+                android:layout_width="match_parent"
+                android:layout_height="57dp"
+                android:inputType="textPassword"
+                android:autofillHints="password"
+                android:textSize="15sp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/button_shape"
+                android:hint="@string/create_password_hint"
+                android:backgroundTint="@color/white"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:fontFamily="@font/poppinsregular"
+                android:textColor="@color/primaryColor" />
+
+            <EditText
+                android:id="@+id/regtextbox4"
+                android:layout_width="match_parent"
+                android:layout_height="57dp"
+                android:inputType="textPassword"
+                android:autofillHints="password"
+                android:textSize="15sp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/button_shape"
+                android:hint="@string/confirm_password_hint"
+                android:backgroundTint="@color/white"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:fontFamily="@font/poppinsregular"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <!-- Register Button -->
+        <Button
+            android:id="@+id/regbtn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/register_button"
+            android:layout_below="@id/regly1"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/button_shape"
+            android:width="250dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppinsbold"
+            android:textSize="14sp" />
+
+        <!-- Already Have Account Section -->
+        <LinearLayout
+            android:id="@+id/regly2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/regbtn1"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:id="@+id/regtext3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppinsregular"
+                android:textSize="12sp"
+                android:text="@string/already_have_account" />
+
+            <TextView
+                android:id="@+id/regtext4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:fontFamily="@font/poppinssemibold"
+                android:textSize="12sp"
+                android:textColor="@color/primaryColor"
+                android:text="@string/login_button" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</ScrollView>
