@@ -3,12 +3,13 @@ package com.ardwind.prototype
 import android.app.DatePickerDialog
 import android.content.Intent
 import android.graphics.Canvas
-import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.Rect
 import android.graphics.pdf.PdfDocument
 import android.net.Uri
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.View
 import android.widget.Button
@@ -28,7 +29,6 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import java.io.FileOutputStream
 import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.Calendar
@@ -57,6 +57,7 @@ class ReportActivity : AppCompatActivity() {
     private val calendar = Calendar.getInstance()
     private lateinit var datePickerDialog: DatePickerDialog
     private lateinit var btnExportPdf: Button
+    private var selectedDate: Date? = null
 
     private fun navigateToHomeActivity() {
         val intent = Intent(this, HomeActivity::class.java)
@@ -98,6 +99,7 @@ class ReportActivity : AppCompatActivity() {
 
         // Setup Click Listeners
         findViewById<ImageView>(R.id.btnbackreport).setOnClickListener { navigateToHomeActivity() }
+        setupSearchEditText()
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -124,11 +126,11 @@ class ReportActivity : AppCompatActivity() {
             this,
             { _, selectedYear, selectedMonth, selectedDay ->
                 calendar.set(selectedYear, selectedMonth, selectedDay)
-                val selectedDate = calendar.time
-                val dateFormat = SimpleDateFormat("dd MMM yyyy", Locale.getDefault())
+                selectedDate = calendar.time
+                val dateFormat = SimpleDateFormat("dd MMM yyyy", Locale.ENGLISH)
                 val formattedDate = dateFormat.format(selectedDate)
                 searchEditText.setText(formattedDate)
-                filterBookings(selectedDate)
+                filterBookings()
             },
             year,
             month,
@@ -160,7 +162,7 @@ class ReportActivity : AppCompatActivity() {
                 }
                 reportList.clear()
                 reportList.addAll(newReportList)
-                filterBookings(null)
+                filterBookings()
             }
 
             override fun onCancelled(error: DatabaseError) {
@@ -169,21 +171,56 @@ class ReportActivity : AppCompatActivity() {
         })
     }
 
-    private fun filterBookings(date: Date?) {
-        val filteredList = if (date == null) {
-            reportList
-        } else {
-            val dateFormat = SimpleDateFormat("dd MMM yyyy", Locale.getDefault())
-            reportList.filter {
-                val bookingDate = dateFormat.parse(it.tanggalBooking)
-                bookingDate != null && isSameDay(date, bookingDate)
+    private fun setupSearchEditText() {
+        searchEditText.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+
+            override fun afterTextChanged(s: Editable?) {
+                filterBookings() // Filter setiap kali teks berubah
+            }
+        })
+    }
+
+    private fun filterBookings() {
+        val filteredList = mutableListOf<ReportItem>()
+        val dateFormat = SimpleDateFormat("dd MMM yyyy", Locale.ENGLISH)
+        val searchText = searchEditText.text.toString().trim()
+
+        for (item in reportList) {
+            val bookingDate: Date? = try {
+                dateFormat.parse(item.tanggalBooking)
+            } catch (e: Exception) {
+                Log.e("ReportActivity", "Error parsing date: ${e.message}")
+                null
+            }
+
+            if (selectedDate != null) {
+                // Jika tanggal dipilih, hanya filter berdasarkan tanggal
+                if (bookingDate != null && isSameDay(selectedDate!!, bookingDate)) {
+                    filteredList.add(item)
+                }
+            } else {
+                // Jika tidak ada tanggal yang dipilih, filter berdasarkan pencarian teks
+                if (searchText.isEmpty() ||
+                    item.tanggalBooking?.contains(searchText, ignoreCase = true) == true ||
+                    item.userName?.contains(searchText, ignoreCase = true) == true ||
+                    item.jamMulai?.contains(searchText, ignoreCase = true) == true ||item.jamSelesai?.contains(searchText, ignoreCase = true) == true ||
+                    item.ruangan?.contains(searchText, ignoreCase = true) == true ||
+                    item.picBooking?.contains(searchText, ignoreCase = true) == true ||
+                    item.judulEvent?.contains(searchText, ignoreCase = true) == true ||
+                    item.jumlahPeserta?.toString()?.contains(searchText, ignoreCase = true) == true
+                ) {
+                    filteredList.add(item)
+                }
             }
         }
         reportAdapter.updateData(filteredList)
     }
 
     private fun isSameDay(date1: Date, date2: Date): Boolean {
-        val fmt = SimpleDateFormat("dd MMM yyyy", Locale.getDefault())
+        val fmt = SimpleDateFormat("dd MMM yyyy", Locale.ENGLISH)
         return fmt.format(date1) == fmt.format(date2)
     }
 
@@ -214,6 +251,44 @@ class ReportActivity : AppCompatActivity() {
         val pdfDocument = PdfDocument()
         val paint = Paint()
         val titlePaint = Paint()
+        val dataPaint = Paint()
+
+        // Ambil teks dari searchEditText
+        val searchText = searchEditText.text.toString().trim()
+        val dateFormat = SimpleDateFormat("dd MMM yyyy", Locale.ENGLISH)
+
+        // Filter data berdasarkan tanggal jika searchEditText tidak kosong
+        val filteredReportList = mutableListOf<ReportItem>()
+        for (item in reportList) {
+            val bookingDate: Date? = try {
+                dateFormat.parse(item.tanggalBooking)
+            } catch (e: Exception) {
+                Log.e("ReportActivity", "Error parsing date: ${e.message}")
+                null
+            }
+            if (selectedDate != null) {
+                if (bookingDate != null && isSameDay(selectedDate!!, bookingDate)) {
+                    filteredReportList.add(item)
+                }
+            } else {
+                if (searchText.isEmpty() ||
+                    item.tanggalBooking?.contains(searchText, ignoreCase = true) == true ||
+                    item.userName?.contains(searchText, ignoreCase = true) == true ||
+                    item.jamMulai?.contains(searchText, ignoreCase = true) == true ||
+                    item.jamSelesai?.contains(searchText, ignoreCase = true) == true ||
+                    item.ruangan?.contains(searchText, ignoreCase = true) == true ||
+                    item.picBooking?.contains(searchText, ignoreCase = true) == true ||
+                    item.judulEvent?.contains(searchText, ignoreCase = true) == true ||
+                    item.jumlahPeserta?.toString()?.contains(searchText, ignoreCase = true) == true
+                ) {
+                    filteredReportList.add(item)
+                }
+            }
+        }
+        if (filteredReportList.isEmpty()) {
+            Toast.makeText(this, "Tidak ada data yang cocok untuk diekspor", Toast.LENGTH_SHORT).show()
+            return
+        }
 
         // Ukuran Kertas A4 (595 x 842)
         val pageWidth = 595
@@ -232,79 +307,93 @@ class ReportActivity : AppCompatActivity() {
 
         // Judul
         titlePaint.textAlign = Paint.Align.CENTER
-        titlePaint.textSize = 18f // Ukuran judul
+        titlePaint.textSize = 18f
         titlePaint.color = ContextCompat.getColor(this, R.color.black)
 
         // Header Tabel
         paint.textAlign = Paint.Align.LEFT
-        paint.textSize = 10f // Ukuran header tabel
+        paint.textSize = 10f
         paint.color = ContextCompat.getColor(this, R.color.black)
 
         // Data Tabel
-        val dataPaint = Paint()
         dataPaint.textAlign = Paint.Align.LEFT
-        dataPaint.textSize = 10f // Ukuran data tabel
+        dataPaint.textSize = 10f
         dataPaint.color = ContextCompat.getColor(this, R.color.black)
-
-        // Hitung tinggi konten
-        val contentHeight = (reportList.size * dataSpacing) + headerY + margin
-        val totalPages = (contentHeight / (pageHeight - (2 * margin))).toInt() + 1
 
         var currentPage = 1
         var currentItemIndex = 0
+        var canvas: Canvas
 
-        while (currentItemIndex < reportList.size) {
-            val page = pdfDocument.startPage(pageInfo)
-            val canvas: Canvas = page.canvas
-
-            // Judul
-            canvas.drawText("Laporan Booking", pageWidth / 2f, 50f, titlePaint)
-
-            // Header Tabel
-            canvas.drawText("Tgl Booking", (margin + 80).toFloat(), headerY.toFloat(), paint)
-            canvas.drawText("Pembuat", margin.toFloat(), headerY.toFloat(), paint)
-            canvas.drawText("Mulai", (margin + 160).toFloat(), headerY.toFloat(), paint)
-            canvas.drawText("Selesai", (margin + 220).toFloat(), headerY.toFloat(), paint)
-            canvas.drawText("Ruangan", (margin + 280).toFloat(), headerY.toFloat(), paint)
-            canvas.drawText("PIC", (margin + 340).toFloat(), headerY.toFloat(), paint)
-            canvas.drawText("Event", (margin + 400).toFloat(), headerY.toFloat(), paint)
-            canvas.drawText("Peserta", (margin + 480).toFloat(), headerY.toFloat(), paint)
-
-            y = headerY + 30
-
-            while (currentItemIndex < reportList.size) {
-                val item = reportList[currentItemIndex]
-
-                // Data
-                canvas.drawText(item.tanggalBooking ?: "", (margin + 80).toFloat(), y.toFloat(), dataPaint)
-                canvas.drawText(item.userName ?: "", margin.toFloat(), y.toFloat(), dataPaint)
-                canvas.drawText(item.jamMulai ?: "", (margin + 160).toFloat(), y.toFloat(), dataPaint)
-                canvas.drawText(item.jamSelesai ?: "", (margin + 220).toFloat(), y.toFloat(), dataPaint)
-                canvas.drawText(item.ruangan ?: "", (margin + 280).toFloat(), y.toFloat(), dataPaint)
-                canvas.drawText(item.picBooking ?: "", (margin + 340).toFloat(), y.toFloat(), dataPaint)
-                canvas.drawText(item.judulEvent ?: "", (margin + 400).toFloat(), y.toFloat(), dataPaint)
-                canvas.drawText(item.jumlahPeserta?.toString() ?: "", (margin + 480).toFloat(), y.toFloat(), dataPaint)
-
-                y += dataSpacing
-                currentItemIndex++
-
-                // Cek apakah halaman penuh
-                if (y >= pageHeight - margin) {
-                    break
-                }
-            }
-
-            pdfDocument.finishPage(page)
-            currentPage++
-        }
-
-        // Save PDF
         try {
             val outputStream = contentResolver.openOutputStream(uri)
-            pdfDocument.writeTo(outputStream!!)
-            pdfDocument.close()
-            outputStream.close()
+            if (outputStream == null) {
+                Toast.makeText(this, "Gagal membuka file untuk ditulis", Toast.LENGTH_SHORT).show()
+                return
+            }
+            while (currentItemIndex < filteredReportList.size) {
+                val page = pdfDocument.startPage(pageInfo)
+                canvas = page.canvas
+
+                // Judul
+                canvas.drawText("Laporan Booking", pageWidth / 2f, 50f, titlePaint)
+
+                // Header Tabel
+                canvas.drawText("Tgl Booking", (margin + 80).toFloat(), headerY.toFloat(), paint)
+                canvas.drawText("Pembuat", margin.toFloat(), headerY.toFloat(), paint)
+                canvas.drawText("Mulai", (margin + 160).toFloat(), headerY.toFloat(), paint)
+                canvas.drawText("Selesai", (margin + 220).toFloat(), headerY.toFloat(), paint)
+                canvas.drawText("Ruangan", (margin + 280).toFloat(), headerY.toFloat(), paint)
+                canvas.drawText("PIC", (margin + 340).toFloat(), headerY.toFloat(), paint)
+                canvas.drawText("Event", (margin + 400).toFloat(), headerY.toFloat(), paint)
+                canvas.drawText("Peserta", (margin + 480).toFloat(), headerY.toFloat(), paint)
+
+                y = headerY + 30
+
+                while (currentItemIndex < filteredReportList.size) {
+                    val item = filteredReportList[currentItemIndex]
+
+                    // Data
+                    canvas.drawText(item.tanggalBooking ?: "", (margin + 80).toFloat(), y.toFloat(), dataPaint)
+                    canvas.drawText(item.userName ?: "", margin.toFloat(), y.toFloat(), dataPaint)
+                    canvas.drawText(item.jamMulai ?: "", (margin + 160).toFloat(), y.toFloat(), dataPaint)
+                    canvas.drawText(item.jamSelesai ?: "", (margin + 220).toFloat(), y.toFloat(), dataPaint)
+                    canvas.drawText(item.ruangan ?: "", (margin + 280).toFloat(), y.toFloat(), dataPaint)
+                    canvas.drawText(item.picBooking ?: "", (margin + 340).toFloat(), y.toFloat(), dataPaint)
+                    canvas.drawText(item.judulEvent ?: "", (margin + 400).toFloat(), y.toFloat(), dataPaint)
+                    canvas.drawText(item.jumlahPeserta?.toString() ?: "", (margin + 480).toFloat(), y.toFloat(), dataPaint)
+
+                    y += dataSpacing
+                    currentItemIndex++
+
+                    // Cek apakah halaman penuh
+                    if (y >= pageHeight - margin) {
+                        pdfDocument.finishPage(page)
+                        currentPage++
+                        val newPage = pdfDocument.startPage(pageInfo)
+                        canvas = newPage.canvas
+                        // Judul
+                        canvas.drawText("Laporan Booking", pageWidth / 2f, 50f, titlePaint)
+
+                        // Header Tabel
+                        canvas.drawText("Tgl Booking", (margin + 80).toFloat(), headerY.toFloat(), paint)
+                        canvas.drawText("Pembuat", margin.toFloat(), headerY.toFloat(), paint)
+                        canvas.drawText("Mulai", (margin + 160).toFloat(), headerY.toFloat(), paint)
+                        canvas.drawText("Selesai", (margin + 220).toFloat(), headerY.toFloat(), paint)
+                        canvas.drawText("Ruangan", (margin + 280).toFloat(), headerY.toFloat(), paint)
+                        canvas.drawText("PIC", (margin + 340).toFloat(), headerY.toFloat(), paint)
+                        canvas.drawText("Event", (margin + 400).toFloat(), headerY.toFloat(), paint)
+                        canvas.drawText("Peserta", (margin + 480).toFloat(),headerY.toFloat(), paint)
+                        y =headerY + 30
+                        break
+                    }
+                }
+
+                pdfDocument.finishPage(page)
+                currentPage++
+            }
+            pdfDocument.writeTo(outputStream)
             Toast.makeText(this, "PDF berhasil disimpan", Toast.LENGTH_LONG).show()
+            outputStream.close()
         } catch (e: IOException) {
             e.printStackTrace()
             Toast.makeText(this, "Gagal menyimpan PDF", Toast.LENGTH_SHORT).show()

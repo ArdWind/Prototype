@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/aksenback"
-            android:contentDescription="@string/background_image_desc"
+            android:contentDescription="@string/gen_image_desc"
             android:layout_alignParentTop="true"
             android:layout_alignParentStart="true" />
 
@@ -28,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_back"
-            android:contentDescription="@string/back_icon_desc"
+            android:contentDescription="@string/gen_icon_desc"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp" />
 
@@ -61,13 +61,14 @@
         <!-- Container Rules -->
         <LinearLayout
             android:id="@+id/rulesly1"
-            android:layout_width="380dp"
+            android:layout_width="500dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/rulestext2"
-            android:orientation="vertical"
             android:layout_centerInParent="true"
+            android:layout_marginBottom="16dp"
+            android:orientation="vertical"
             android:padding="8dp"
-            android:layout_marginBottom="16dp">
+            tools:ignore="TextSizeCheck">
 
             <!-- Rule 1 -->
             <LinearLayout
@@ -80,19 +81,19 @@
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/homeicon1"
-                    android:contentDescription="@string/cd_rule_icon_1"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginEnd="12dp" />
+                    android:layout_marginEnd="12dp"
+                    android:contentDescription="@string/rules_icon1_desc"
+                    android:src="@drawable/homeicon1" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/rule_text_1"
-                    android:textSize="14sp"
+                    android:text="@string/rules_text1"
                     android:textAlignment="center"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
             </LinearLayout>
 
             <!-- Rule 2 -->
@@ -106,19 +107,19 @@
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/homeicon2"
-                    android:contentDescription="@string/cd_rule_icon_2"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginEnd="12dp" />
+                    android:layout_marginEnd="12dp"
+                    android:contentDescription="@string/rules_icon2_desc"
+                    android:src="@drawable/homeicon2" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/rule_text_2"
-                    android:textSize="14sp"
+                    android:text="@string/rules_text2"
                     android:textAlignment="center"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
             </LinearLayout>
 
             <!-- Rule 3 -->
@@ -134,7 +135,7 @@
                     android:layout_height="40dp"
                     android:layout_gravity="center_vertical"
                     android:layout_marginEnd="12dp"
-                    android:contentDescription="@string/cd_rule_icon_3"
+                    android:contentDescription="@string/rules_icon3_desc"
                     android:src="@drawable/homeicon3"
                     tools:ignore="ImageContrastCheck" />
 
@@ -142,10 +143,10 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/rule_text_3"
-                    android:textSize="14sp"
+                    android:text="@string/rules_text3"
                     android:textAlignment="center"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
             </LinearLayout>
 
             <!-- Rule 4 -->
@@ -159,19 +160,19 @@
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/homeicon4"
-                    android:contentDescription="@string/cd_rule_icon_4"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginEnd="12dp" />
+                    android:layout_marginEnd="12dp"
+                    android:contentDescription="@string/rules_icon4_desc"
+                    android:src="@drawable/homeicon4" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/rule_text_4"
-                    android:textSize="14sp"
+                    android:text="@string/rules_text4"
                     android:textAlignment="center"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
             </LinearLayout>
 
             <!-- Rule 5 -->
@@ -185,19 +186,19 @@
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/homeicon5"
-                    android:contentDescription="@string/cd_rule_icon_5"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginEnd="12dp" />
+                    android:layout_marginEnd="12dp"
+                    android:contentDescription="@string/rules_icon5_desc"
+                    android:src="@drawable/homeicon5" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/rule_text_5"
-                    android:textSize="14sp"
+                    android:text="@string/rules_text5"
                     android:textAlignment="center"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
             </LinearLayout>
 
         </LinearLayout>
@@ -209,7 +210,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/rulesly1"
             android:layout_centerHorizontal="true"
-            android:text="@string/button_view_room"
+            android:text="@string/rules_viewroom_text"
             android:padding="12dp"
             android:background="@drawable/button_shape"
             android:layout_marginTop="20dp"

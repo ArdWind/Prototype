@@ -15,7 +15,7 @@
         <!-- akun sesion Section -->
         <LinearLayout
             android:id="@+id/homly1"
-            android:layout_width="400dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="end"
@@ -34,7 +34,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppinsregular"
                     android:textSize="11sp"
-                    android:text="email address" />
+                    android:text="@string/home_usermail" />
 
                 <TextView
                     android:id="@+id/fullname"
@@ -43,7 +43,7 @@
                     android:fontFamily="@font/poppinssemibold"
                     android:textSize="11sp"
                     android:textColor="@color/primaryColor"
-                    android:text="full name" />
+                    android:text="@string/home_username" />
             </LinearLayout>
 
             <ImageView
@@ -53,7 +53,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="5dp"
                 android:layout_marginEnd="10dp"
-                android:contentDescription="@string/back_icon_desc"
+                android:contentDescription="@string/gen_logout_desc"
                 android:src="@drawable/ic_logout" />
 
         </LinearLayout>
@@ -64,7 +64,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/aksenback"
-            android:contentDescription="@string/background_image_desc"
+            android:contentDescription="@string/gen_image_desc"
             android:layout_alignParentTop="true"
             android:layout_alignParentStart="true" />
 
@@ -74,7 +74,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_back"
-            android:contentDescription="@string/back_icon_desc"
+            android:contentDescription="@string/gen_icon_desc"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp" />
 
@@ -86,7 +86,7 @@
             android:layout_below="@id/btnbackhome"
             android:layout_marginTop="40dp"
             android:layout_marginBottom="10dp"
-            android:text="@string/home_greeting"
+            android:text="@string/home_title"
             android:layout_centerHorizontal="true"
             android:textAlignment="center"
             android:fontFamily="@font/poppinssemibold"
@@ -117,8 +117,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:drawableTopCompat="@drawable/homeicon1"
-                    android:contentDescription="@string/cd_rules_icon"
-                    android:text="@string/menu_rules"
+                    android:contentDescription="@string/home_menu1_desc"
+                    android:text="@string/home_menu1_text"
                     android:fontFamily="@font/poppinsregular"
                     android:textSize="12sp"
                     android:textColor="@color/black"
@@ -139,8 +139,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:drawableTopCompat="@drawable/homeicon2"
-                    android:contentDescription="@string/cd_preview_icon"
-                    android:text="@string/menu_preview"
+                    android:contentDescription="@string/home_menu2_desc"
+                    android:text="@string/home_menu2_text"
                     android:fontFamily="@font/poppinsregular"
                     android:textSize="12sp"
                     android:textColor="@color/black"
@@ -173,8 +173,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:drawableTopCompat="@drawable/homeicon3"
-                    android:contentDescription="@string/cd_my_booking_icon"
-                    android:text="@string/menu_my_booking"
+                    android:contentDescription="@string/home_menu3_desc"
+                    android:text="@string/home_menu3_text"
                     android:fontFamily="@font/poppinsregular"
                     android:textSize="12sp"
                     android:textColor="@color/black"
@@ -195,8 +195,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:drawableTopCompat="@drawable/homeicon4"
-                    android:contentDescription="@string/cd_report_icon"
-                    android:text="@string/menu_report1"
+                    android:contentDescription="@string/home_menu4_desc"
+                    android:text="@string/home_menu4_text"
                     android:fontFamily="@font/poppinsregular"
                     android:textSize="12sp"
                     android:textColor="@color/black"
@@ -229,8 +229,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:drawableTopCompat="@drawable/homeicon5"
-                    android:contentDescription="@string/cd_list_booking_icon"
-                    android:text="@string/menu_list_booking"
+                    android:contentDescription="@string/home_menu5_desc"
+                    android:text="@string/home_menu5_text"
                     android:fontFamily="@font/poppinsregular"
                     android:textSize="12sp"
                     android:textColor="@color/black"
@@ -251,8 +251,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:drawableTopCompat="@drawable/homeicon6"
-                    android:contentDescription="@string/cd_kritik_dan_saran_icon"
-                    android:text="@string/menu_kritik_dan_saran"
+                    android:contentDescription="@string/home_menu6_desc"
+                    android:text="@string/home_menu6_text"
                     android:fontFamily="@font/poppinsregular"
                     android:textSize="12sp"
                     android:textColor="@color/black"

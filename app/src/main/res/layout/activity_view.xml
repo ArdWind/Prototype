@@ -21,7 +21,7 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentStart="true"
             android:id="@+id/viewbackimg"
-            android:contentDescription="@string/background_image_desc"/>
+            android:contentDescription="@string/gen_image_desc"/>
 
         <!-- Back Button -->
         <ImageView
@@ -31,7 +31,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:id="@+id/btnbackview"
-            android:contentDescription="@string/back_icon_desc"/>
+            android:contentDescription="@string/gen_icon_desc"/>
 
         <!-- Title Text -->
         <TextView
@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/btnbackview"
             android:layout_marginTop="10dp"
-            android:text="@string/view_room"
+            android:text="@string/view_title"
             android:layout_centerHorizontal="true"
             android:fontFamily="@font/poppinssemibold"
             android:textSize="24sp"
@@ -53,7 +53,7 @@
             android:paddingStart="30dp"
             android:paddingEnd="30dp"
             android:layout_below="@id/viewtext1"
-            android:text="@string/view_room_description"
+            android:text="@string/view_subtitle"
             android:layout_centerHorizontal="true"
             android:fontFamily="@font/poppinsregular"
             android:textSize="12sp"
@@ -67,6 +67,7 @@
             android:layout_width="500dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/viewtext2"
+            android:layout_centerHorizontal="true"
             android:layout_marginBottom="16dp"
             android:orientation="vertical"
             android:padding="8dp"
@@ -84,9 +85,9 @@
                     android:layout_height="0dp"
                     android:textAlignment="center"
                     app:drawableTopCompat="@drawable/roomtarivid"
-                    android:contentDescription="@string/desc_room_tarivid"
+                    android:contentDescription="@string/view_room1_desc"
                     android:layout_weight="1"
-                    android:text="@string/rule_1_text"
+                    android:text="@string/view_room1_text"
                     android:textColor="@color/black"
                     android:textSize="16sp"/>
             </LinearLayout>
@@ -103,9 +104,9 @@
                     android:layout_height="0dp"
                     android:textAlignment="center"
                     app:drawableTopCompat="@drawable/roomtpm"
-                    android:contentDescription="@string/desc_room_tpm"
+                    android:contentDescription="@string/view_room2_desc"
                     android:layout_weight="1"
-                    android:text="@string/rule_2_text"
+                    android:text="@string/view_room2_text"
                     android:textColor="@color/black"
                     android:textSize="16sp"/>
             </LinearLayout>
@@ -122,9 +123,9 @@
                     android:layout_height="0dp"
                     android:textAlignment="center"
                     app:drawableTopCompat="@drawable/roomzegafit"
-                    android:contentDescription="@string/desc_room_zegafit"
+                    android:contentDescription="@string/view_room3_desc"
                     android:layout_weight="1"
-                    android:text="@string/rule_3_text"
+                    android:text="@string/view_room3_text"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
             </LinearLayout>
@@ -141,9 +142,9 @@
                     android:layout_height="0dp"
                     android:textAlignment="center"
                     app:drawableTopCompat="@drawable/setzaegafit"
-                    android:contentDescription="@string/desc_room_setzaegafit"
+                    android:contentDescription="@string/view_room4_desc"
                     android:layout_weight="1"
-                    android:text="@string/rule_4_text"
+                    android:text="@string/view_room4_text"
                     android:textColor="@color/black"
                     android:textSize="16sp"/>
             </LinearLayout>
@@ -159,8 +160,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:contentDescription="@string/desc_room_setcafe"
-                    android:text="@string/rule_5_text"
+                    android:contentDescription="@string/view_room5_desc"
+                    android:text="@string/view_room5_text"
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textSize="16sp"
@@ -174,7 +175,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:text="@string/Button_list_booking"
+            android:text="@string/view_listbooking_text"
             android:layout_below="@id/viewly1"
             android:layout_centerHorizontal="true"
             android:background="@drawable/button_shape"

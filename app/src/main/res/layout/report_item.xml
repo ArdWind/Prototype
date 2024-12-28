@@ -11,7 +11,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Tgl Booking"
+        android:text="@string/report_head_tgl"
         android:textSize="11sp"
         android:textAlignment="center"
         android:backgroundTint="@color/white"/>
@@ -21,7 +21,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Pembuat"
+        android:text="@string/report_head_user"
         android:textSize="11sp"
         android:textAlignment="center"
         android:backgroundTint="@color/white"  />
@@ -33,7 +33,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Mulai"
+        android:text="@string/report_head_mulai"
         android:textSize="11sp"
         android:textAlignment="center"
         android:backgroundTint="@color/white"  />
@@ -43,7 +43,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Selesai"
+        android:text="@string/report_head_selesai"
         android:textSize="11sp"
         android:textAlignment="center"
         android:backgroundTint="@color/white"  />
@@ -53,7 +53,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Ruangan"
+        android:text="@string/report_head_ruangan"
         android:textSize="11sp"
         android:textAlignment="center"
         android:backgroundTint="@color/white"  />
@@ -63,7 +63,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="PIC"
+        android:text="@string/report_head_pic"
         android:textSize="11sp"
         android:textAlignment="center"
         android:backgroundTint="@color/white"  />
@@ -73,7 +73,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Event"
+        android:text="@string/report_head_event"
         android:textSize="11sp"
         android:textAlignment="center"
         android:backgroundTint="@color/white"  />
@@ -83,7 +83,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Peserta"
+        android:text="@string/report_head_pesrta"
         android:textSize="11sp"
         android:textAlignment="center"
         android:backgroundTint="@color/white" />

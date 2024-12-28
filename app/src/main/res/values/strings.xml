@@ -92,101 +92,149 @@
     </string>
     <string name="action_settings">Settings</string>
 
-    <!-- Titles -->
-    <string name="main_title">YukMeet</string>
-    <string name="subtitle">Aplikasi booking meeting &amp; Event online,
-Persiapan Meeting &amp; Event menjadi cepat, aman dan tenang&#8230; yuk kita booking&#8230;</string>
-
-    <!-- Main_Buttons -->
-    <string name="login_button">Login</string>
-    <string name="register_button">Register</string>
-    <!-- Feed_Back_Buttons -->
-    <string name="button_submit">Kirim</string>
-    <!-- Rules_Buttons -->
-    <string name="button_view_room">View Room</string>
-    <!-- View_Buttons -->
-    <string name="Button_list_booking">List Booking</string>
-
-    <!-- Main_Content Descriptions -->
-    <string name="background_image_desc">Background image of the main screen</string>
-    <string name="logo_image_desc">Animated logo of YukMeet</string>
-    <!-- Login_Content Descriptions -->
-    <string name="back_icon_desc">Icon to go back to the previous screen</string>
-    <string name="login_illustration_desc">Illustration representing login</string>
-    <!-- Register_Content Descriptions -->
-    <string name="register_illustration_desc">Illustration representing registration</string>
-    <!-- Feed_Back_Content Descriptions -->
-    <string name="cd_feedback_image">Gambar ilustrasi Feedback</string>
-
-    <!-- Login_Texts -->
-    <string name="welcome_back">Welcome back!</string>
-    <string name="full_name_hint">Enter your full name</string>
-    <string name="password_hint">Password</string>
-    <string name="no_account">No have an account?</string>
-    <string name="register">Register</string>
-    <!-- Register_Texts -->
-    <string name="welcome_onboard">Welcome Onboard</string>
-    <string name="register_description">Yuk daftar dulu untuk buat akun YukMeet</string>
-    <string name="email_hint">Enter your email</string>
-    <string name="create_password_hint">Create password</string>
-    <string name="confirm_password_hint">Confirm password</string>
-    <string name="already_have_account">Already have an account?</string>
-    <!-- Home_Texts -->
-    <string name="home_greeting">Hai, Booking ruangan apa hari ini?</string>
-    <string name="menu_rules">Peraturan Berlaku</string>
-    <string name="cd_rules_icon">Ikon untuk peraturan berlaku</string>
-    <string name="menu_preview">Preview Ruangan</string>
-    <string name="cd_preview_icon">Ikon untuk preview ruangan</string>
-    <string name="menu_my_booking">My Booking</string>
-    <string name="cd_my_booking_icon">Ikon untuk my booking</string>
-    <string name="menu_report1">Report</string>
-    <string name="cd_report_icon">Ikon untuk report</string>
-    <string name="menu_list_booking">List Booking</string>
-    <string name="cd_list_booking_icon">Ikon untuk list booking</string>
-    <string name="menu_kritik_dan_saran">Kritik dan Saran</string>
-    <string name="cd_kritik_dan_saran_icon">Ikon untuk kritik dan saran</string>
-    <!-- Feed_Back_Texts -->
-    <string name="feedback_title">Feed Back!</string>
-    <string name="feedback_subtitle">Kritik tanpa Saran = Menjatuhkan\nnamun\nKritik dengan Saran = Membangun</string>
-    <string name="input_hint_message">Tuliskan kritik dan saran Anda</string>
-    <!-- Rules_Texts -->
-    <string name="rules_title">Obey The Rules</string>
-    <string name="rules_subtitle">Mohon untuk dapat mengikuti dan mematuhi aturannya ya!</string>
-    <string name="rule_text_1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
-    <string name="rule_text_2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
-    <string name="rule_text_3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
-    <string name="rule_text_4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
-    <string name="rule_text_5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
-    <string name="cd_rule_icon_1">Ikon untuk aturan pertama</string>
-    <string name="cd_rule_icon_2">Ikon untuk aturan kedua</string>
-    <string name="cd_rule_icon_3">Ikon untuk aturan ketiga</string>
-    <string name="cd_rule_icon_4">Ikon untuk aturan keempat</string>
-    <string name="cd_rule_icon_5">Ikon untuk aturan kelima</string>
-    <!-- View_Texts -->
-    <string name="view_room">View Room</string>
-    <string name="view_room_description">Pastikan anda memesan ruangan yg tepat untuk Meeting atau Event mu</string>
-    <string name="rule_1_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
-    <string name="rule_2_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
-    <string name="rule_3_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
-    <string name="rule_4_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
-    <string name="rule_5_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua genos.</string>
-    <string name="desc_room_tarivid">Room image with tarivid layout</string>
-    <string name="desc_room_tpm">Room image with tpm layout</string>
-    <string name="desc_room_zegafit">Room image with zegafit layout</string>
-    <string name="desc_room_setzaegafit">Room image with setzaegafit layout</string>
-    <string name="desc_room_setcafe">Room image with setcafe layout</string>
-
-    <!-- Array untuk Spinner Ruangan -->
+<!-- Array untuk Spinner Ruangan -->
     <string-array name="ruangan_options">
         <item>Ruang 1</item>
         <item>Ruang 2</item>
         <item>Ruang 3</item>
     </string-array>
 
-<!-- String halaman report-->
+<!-- String General-->
+    <string name="gen_image_desc">Part of background image</string>
+    <string name="gen_icon_desc">Icon to go back to the previous screen</string>
+    <string name="gen_fullname_hint">Enter your full name</string>
+    <string name="gen_email_hint">Enter your email</string>
+    <string name="gen_password_hint">Enter your password</string>
+    <string name="gen_login_text">Login</string>
+    <string name="gen_register_text">Register</string>
+    <string name="gen_submit_button">Submit</string>
+    <string name="gen_cancel_button">Cancel</string>
+    <string name="gen_logout_desc">Akhiri sesi user login</string>
+    <string name="gen_search_hint">Search by date</string>
+    <string name="gen_calender_desc">Gunakan kalender untuk input tanggal</string>
+
+<!-- String halaman Report-->
     <string name="report_title">Report</string>
-    <string name="search_date_hint">Cari Tanggal (dd MMM yyyy)</string>
-    <string name="calendar_icon_desc">Calendar Icon</string>
-    <string name="export_pdf_button">Export PDF</string>
+    <string name="report_exportpdf_text">Export PDF</string>
+    <string name="report_head_tgl">Tgl Booking</string>
+    <string name="report_head_user">Pembuat</string>
+    <string name="report_head_mulai">Mulai</string>
+    <string name="report_head_selesai">Selesai</string>
+    <string name="report_head_ruangan">Ruangan</string>
+    <string name="report_head_pic">PIC</string>
+    <string name="report_head_event">Event</string>
+    <string name="report_head_pesrta">Peserta</string>
+
+<!-- String halaman Book-->
+    <string name="book_title">My Bookings</string>
+    <string name="book_fab_desc">Add Book</string>
+
+<!-- String halaman Feed Back -->
+    <string name="feedback_title">Feed Back!</string>
+    <string name="feedback_subtitle">Kritik tanpa Saran = Menjatuhkan\nnamun\nKritik dengan Saran = Membangun</string>
+    <string name="feedback_input_hint">Tuliskan kritik dan saran Anda</string>
+    <string name="feedback_image_desc">Gambar ilustrasi Feedback</string>
+
+<!-- String halaman Form -->
+    <string name="form_title">Form Booking</string>
+    <string name="form_subtitle">Isi form dengan lengkap dan sesuai kebutuhan</string>
+    <string name="form_tgl_txt">Tanggal Booking</string>
+    <string name="form_tgl_hint">Pilih tanggal</string>
+    <string name="form_jam_txt">Waktu Booking</string>
+    <string name="form_mulai_hint">Mulai</string>
+    <string name="form_selesai_hint">Selesai</string>
+    <string name="form_separator">-</string>
+    <string name="form_ruangan_txt">Ruangan</string>
+    <string name="form_pic_txt">PIC Booking</string>
+    <string name="form_pic_hint">Nama PIC</string>
+    <string name="form_event_txt">Judul Event</string>
+    <string name="form_event_hint">Judul event</string>
+    <string name="form_peserta_txt">Jumlah Peserta</string>
+    <string name="form_peserta_hint">Jumlah peserta</string>
+
+<!-- String halaman Home -->
+    <string name="home_title">Hai, Booking ruangan apa hari ini?</string>
+    <string name="home_menu1_text">Peraturan Berlaku</string>
+    <string name="home_menu1_desc">Ikon untuk peraturan berlaku</string>
+    <string name="home_menu2_text">Preview Ruangan</string>
+    <string name="home_menu2_desc">Ikon untuk preview ruangan</string>
+    <string name="home_menu3_text">My Booking</string>
+    <string name="home_menu3_desc">Ikon untuk my booking</string>
+    <string name="home_menu4_text">Report</string>
+    <string name="home_menu4_desc">Ikon untuk report</string>
+    <string name="home_menu5_text">List Booking</string>
+    <string name="home_menu5_desc">Ikon untuk list booking</string>
+    <string name="home_menu6_text">Kritik dan Saran</string>
+    <string name="home_menu6_desc">Ikon untuk kritik dan saran</string>
+    <string name="home_usermail">email address</string>
+    <string name="home_username">full name</string>
+
+<!-- String halaman List -->
+    <string name="list_title">List Booking</string>
+    <string name="list_fab_desc">Add Book</string>
+
+<!-- String halaman Login -->
+    <string name="login_title">Welcome back!</string>
+    <string name="login_image_desc">Illustration representing login</string>
+    <string name="login_no_account">No have an account?</string>
+
+<!-- String halaman Main -->
+    <string name="main_icon_desc">Animated logo of YukMeet</string>
+    <string name="main_title">YukMeet</string>
+    <string name="main_subtitle">
+        Aplikasi booking meeting &amp; Event online, Persiapan Meeting &amp; Event menjadi cepat, aman dan tenang&#8230; yuk kita booking&#8230;
+    </string>
+
+<!-- String halaman Register -->
+    <string name="register_title">Welcome Onboard</string>
+    <string name="register_subtitle">Yuk daftar dulu untuk buat akun YukMeet</string>
+    <string name="register_image_desc">Illustration representing registration</string>
+    <string name="register_createpassword_hint">Create password</string>
+    <string name="register_confirmpassword_hint">Confirm password</string>
+    <string name="register_have_account">Already have an account?</string>
+
+<!-- String halaman Rules -->
+    <string name="rules_title">Obey The Rules</string>
+    <string name="rules_subtitle">Mohon untuk dapat mengikuti dan mematuhi aturannya ya!</string>
+    <string name="rules_text1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+    <string name="rules_text2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+    <string name="rules_text3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+    <string name="rules_text4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+    <string name="rules_text5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+    <string name="rules_icon1_desc">Ikon untuk aturan pertama</string>
+    <string name="rules_icon2_desc">Ikon untuk aturan kedua</string>
+    <string name="rules_icon3_desc">Ikon untuk aturan ketiga</string>
+    <string name="rules_icon4_desc">Ikon untuk aturan keempat</string>
+    <string name="rules_icon5_desc">Ikon untuk aturan kelima</string>
+    <string name="rules_viewroom_text">View Room</string>
+
+<!-- String halaman View -->
+    <string name="view_title">View Room</string>
+    <string name="view_subtitle">Pastikan anda memesan ruangan yg tepat untuk Meeting atau Event mu</string>
+    <string name="view_room1_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+    <string name="view_room2_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+    <string name="view_room3_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+    <string name="view_room4_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+    <string name="view_room5_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua genos.</string>
+    <string name="view_room1_desc">Room image with tarivid layout</string>
+    <string name="view_room2_desc">Room image with tpm layout</string>
+    <string name="view_room3_desc">Room image with zegafit layout</string>
+    <string name="view_room4_desc">Room image with setzaegafit layout</string>
+    <string name="view_room5_desc">Room image with setcafe layout</string>
+    <string name="view_listbooking_text">List Booking</string>
+
+<!-- String halaman Item Book -->
+    <string name="IB_tgl_txt">Tanggal Booking</string>
+    <string name="IB_mulai_txt">Jam Mulai</string>
+    <string name="IB_separator_txt">-</string>
+    <string name="IB_selesai_txt">Jam Selesai</string>
+    <string name="IB_ruang_txt">Ruangan</string>
+    <string name="IB_pic1_txt">"PIC Booking  :  "</string>
+    <string name="IB_pic2_txt">PIC Booking</string>
+    <string name="IB_event1_txt">"Judul Event  :  "</string>
+    <string name="IB_event2_txt">Judul Event</string>
+    <string name="IB_peserta1_txt">"Jumlah Peserta  :  "</string>
+    <string name="IB_peserta2_txt">Jumlah Peserta</string>
+    <string name="IB_orang_txt">" Orang"</string>
 
 </resources>

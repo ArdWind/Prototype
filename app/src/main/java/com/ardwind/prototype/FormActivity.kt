@@ -2,7 +2,7 @@ package com.ardwind.prototype
 
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
-import android.icu.util.Calendar
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -17,8 +17,8 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ServerValue
 import java.text.SimpleDateFormat
+import java.util.Calendar
 import java.util.Locale
-import android.content.Intent
 
 class FormActivity : AppCompatActivity() {
 
@@ -47,6 +47,11 @@ class FormActivity : AppCompatActivity() {
     // Firebase
     private lateinit var database: DatabaseReference
     private lateinit var auth: FirebaseAuth
+
+    // Format tanggal yang dipaksakan (dd MMM yyyy, English)
+    private val dateFormat = SimpleDateFormat("dd MMM yyyy", Locale.ENGLISH)
+    // Format waktu yang dipaksakan (HH:mm)
+    private val timeFormat = SimpleDateFormat("HH:mm", Locale.getDefault())
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -111,7 +116,7 @@ class FormActivity : AppCompatActivity() {
             { _, selectedYear, selectedMonth, selectedDay ->
                 val selectedDate = Calendar.getInstance()
                 selectedDate.set(selectedYear, selectedMonth, selectedDay)
-                val dateFormat = SimpleDateFormat("dd MMM yyyy", Locale.getDefault())
+                // Menggunakan dateFormat (Locale.ENGLISH) untuk memformat tanggal
                 editTglBooking.setText(dateFormat.format(selectedDate.time))
             },
             year,
@@ -132,7 +137,7 @@ class FormActivity : AppCompatActivity() {
                 val selectedTime = Calendar.getInstance()
                 selectedTime.set(Calendar.HOUR_OF_DAY, selectedHour)
                 selectedTime.set(Calendar.MINUTE, selectedMinute)
-                val timeFormat = SimpleDateFormat("HH:mm", Locale.getDefault())
+                // Menggunakan timeFormat (Locale.getDefault()) untuk memformat waktu
                 editText.setText(timeFormat.format(selectedTime.time))
             },
             hour,
@@ -204,7 +209,7 @@ class FormActivity : AppCompatActivity() {
                     }
                 }
         } else {
-            Log.e("FormActivity", "bookingId is null!")
+            Log.e("FormActivity","bookingId is null!")
         }
     }
 

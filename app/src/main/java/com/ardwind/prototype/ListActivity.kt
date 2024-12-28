@@ -3,6 +3,8 @@ package com.ardwind.prototype
 import android.app.DatePickerDialog
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.widget.EditText
 import android.widget.ImageView
@@ -34,6 +36,9 @@ class ListActivity : AppCompatActivity() {
     private lateinit var calendarImageView: ImageView
     private val calendar = Calendar.getInstance()
     private lateinit var datePickerDialog: DatePickerDialog
+    private var selectedDate: Date? = null
+    // Menggunakan Locale.ENGLISH untuk format tanggal yang konsisten
+    private val dateFormat = SimpleDateFormat("dd MMM yyyy", Locale.ENGLISH)
 
     private fun setupClickListeners() {
         findViewById<ImageView>(R.id.btnbacklist).setOnClickListener { navigateToHomeActivity() }
@@ -71,6 +76,7 @@ class ListActivity : AppCompatActivity() {
         setupClickListeners()
         loadBookings()
         setupCalendar()
+        setupSearchEditText()
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -86,18 +92,32 @@ class ListActivity : AppCompatActivity() {
                 for (dataSnapshot in snapshot.children) {
                     val booking = dataSnapshot.getValue(FormActivity.Booking::class.java)
                     booking?.let {
+                        // Memastikan tanggal yang diambil dari Firebase diformat dengan benar
+                        it.tanggalBooking = formatDate(it.tanggalBooking)
                         newBookingList.add(it)
                     }
                 }
                 bookingList.clear()
                 bookingList.addAll(newBookingList)
-                filterBookings(null, searchEditText.text.toString())
+                filterBookings()
             }
 
             override fun onCancelled(error: DatabaseError) {
                 Log.e("ListActivity", "Error loading bookings: ${error.message}")
             }
         })
+    }
+    // Fungsi untuk memformat tanggal ke "dd MMM yyyy" dengan Locale.ENGLISH
+    private fun formatDate(dateString: String?): String? {
+        if (dateString == null) return null
+        return try {
+            val inputFormat = SimpleDateFormat("dd MMM yyyy", Locale.ENGLISH)
+            val date = inputFormat.parse(dateString)
+            dateFormat.format(date)
+        } catch (e: Exception) {
+            Log.e("ListActivity", "Error parsing date: ${e.message}")
+            null
+        }
     }
 
     private fun setupCalendar() {
@@ -118,11 +138,10 @@ class ListActivity : AppCompatActivity() {
             this,
             { _, selectedYear, selectedMonth, selectedDay ->
                 calendar.set(selectedYear, selectedMonth, selectedDay)
-                val selectedDate = calendar.time
-                val dateFormat = SimpleDateFormat("dd MMM yyyy", Locale.getDefault())
+                selectedDate = calendar.time
                 val formattedDate = dateFormat.format(selectedDate)
                 searchEditText.setText(formattedDate)
-                filterBookings(selectedDate, null)
+                filterBookings()
             },
             year,
             month,
@@ -131,38 +150,64 @@ class ListActivity : AppCompatActivity() {
         datePickerDialog.show()
     }
 
-    private fun filterBookings(date: Date?, dateString: String?) {
-        filteredBookingList.clear()
-        val dateFormat = SimpleDateFormat("dd MMM yyyy", Locale.getDefault())
-        if (date != null) {
-            for (booking in bookingList) {
-                val bookingDate: Date? = dateFormat.parse(booking.tanggalBooking)
-                if (bookingDate != null && isSameDay(date, bookingDate)) {
-                    filteredBookingList.add(booking)
-                }
+    private fun setupSearchEditText() {
+        searchEditText.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+
+            override fun afterTextChanged(s: Editable?) {
+                filterBookings()
             }
-        } else if (!dateString.isNullOrEmpty()) {
-            try {
-                val inputDate: Date? = dateFormat.parse(dateString)
-                if (inputDate != null) {
-                    for (booking in bookingList) {
-                        val bookingDate: Date? = dateFormat.parse(booking.tanggalBooking)
-                        if (bookingDate != null && isSameDay(inputDate, bookingDate)) {
-                            filteredBookingList.add(booking)
-                        }
-                    }
-                }
+        })
+    }
+
+    private fun filterBookings() {
+        val searchText = searchEditText.text.toString().trim()
+        val tempFilteredList = mutableListOf<FormActivity.Booking>()
+
+        for (booking in bookingList) {
+            val bookingDate: Date? = try {
+                dateFormat.parse(booking.tanggalBooking)
             } catch (e: Exception) {
                 Log.e("ListActivity", "Error parsing date: ${e.message}")
+                null
             }
-        } else {
-            filteredBookingList.addAll(bookingList)
+
+            if (selectedDate != null) {
+                // Jika tanggal dipilih, hanya filter berdasarkan tanggal
+                if (bookingDate != null && isSameDay(selectedDate!!, bookingDate)) {
+                    tempFilteredList.add(booking)
+                }
+            } else {
+                // Jika tidak ada tanggal yang dipilih, filter berdasarkan pencarian teks
+                if (searchText.isEmpty() ||
+                    booking.tanggalBooking?.contains(searchText, ignoreCase = true) == true ||
+                    booking.userName?.contains(searchText, ignoreCase = true) == true ||
+                    booking.jamMulai?.contains(searchText, ignoreCase = true) == true ||
+                    booking.jamSelesai?.contains(searchText, ignoreCase = true) == true ||
+                    booking.ruangan?.contains(searchText, ignoreCase = true) == true ||
+                    booking.picBooking?.contains(searchText, ignoreCase = true) == true ||
+                    booking.judulEvent?.contains(searchText, ignoreCase = true) == true ||
+                    booking.jumlahPeserta?.toString()?.contains(searchText, ignoreCase = true) == true
+                ) {
+                    tempFilteredList.add(booking)
+                }
+            }
         }
+
+        filteredBookingList.clear()
+        filteredBookingList.addAll(tempFilteredList)
         listAdapter.notifyDataSetChanged()
     }
 
     private fun isSameDay(date1: Date, date2: Date): Boolean {
-        val fmt = SimpleDateFormat("dd MMM yyyy", Locale.getDefault())
-        return fmt.format(date1) == fmt.format(date2)
+        val cal1 = Calendar.getInstance()
+        val cal2 = Calendar.getInstance()
+        cal1.time = date1
+        cal2.time = date2
+        return cal1.get(Calendar.YEAR) == cal2.get(Calendar.YEAR) &&
+                cal1.get(Calendar.MONTH) == cal2.get(Calendar.MONTH) &&
+                cal1.get(Calendar.DAY_OF_MONTH) == cal2.get(Calendar.DAY_OF_MONTH)
     }
 }
