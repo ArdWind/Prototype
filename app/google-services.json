@@ -1,22 +1,22 @@
 {
   "project_info": {
-    "project_number": "607265349717",
-    "project_id": "yukmeet-fcf94",
-    "storage_bucket": "yukmeet-fcf94.firebasestorage.app",
-    "firebase_url": "https://yukmeet-fcf94-default-rtdb.asia-southeast1.firebasedatabase.app"
+    "project_number": "//ganti//",
+    "project_id": "//ganti//",
+    "storage_bucket": "//ganti//",
+    "firebase_url": "//ganti//"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:607265349717:android:fe8e37ebb12f575a9574dc",
+        "mobilesdk_app_id": "//ganti//",
         "android_client_info": {
-          "package_name": "com.ardwind.prototype"
+          "package_name": "//ganti//"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBDudCAAwfmOz6EYm4JcW7I_cuVWJLyp1k"
+          "current_key": "//ganti//"
         }
       ],
       "services": {
